@@ -8,16 +8,18 @@
     z-index: 1;
     top: 0;
     right: 0;
-    width: 48vw;
+    width: 42vw;
     height: 100vh;
     overflow: hidden;
-    font-size: 180px;
-    line-height: 1;
+    font-size: 2.4rem;
+    line-height: 1.2;
     font-weight: bold;
     text-transform: lowercase;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.65);
     backdrop-filter: blur(5px); 
   }
+
+
 
     &Transparent {
       position: absolute;
@@ -30,19 +32,29 @@
       background-size: cover;
       background-clip: text;
       -webkit-background-clip: text;
-      color: transparent;
+      color: transparent;   
+    }
 
-      &Container {
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-      }
+    &Right {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
 
-      &Text {
-        max-width: 45vw;
-      }
+    &TextContainer {
+      max-width: 40vw;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    &Text {
+      margin-right: 1vw;
     }
 }
 

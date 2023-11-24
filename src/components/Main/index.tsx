@@ -1,4 +1,3 @@
-import './index.scss';
 import style from './index.module.scss'
 interface MainProps {
   image: string;
@@ -19,8 +18,10 @@ const Main = ({
           style={{
             backgroundImage: `url(${image})`,
           }}>
-            <div className={style.mainTransparentContainer}>
-              <div className={style.mainTransparentText}>{text}</div>
+            <div className={style.mainRight}>
+              <div className={style.mainTextContainer}>
+                <span className={style.mainText}>{text}</span>
+              </div>
             </div>
           </div>
       </div>
