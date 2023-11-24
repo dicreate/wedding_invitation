@@ -1,0 +1,54 @@
+/* .main {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  
+} */
+
+.coverCard {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+
+  &__title {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    width: 50vw;
+    height: 100vh;
+    overflow: hidden;
+    font-size: 180px;
+    line-height: 1;
+    font-weight: bold;
+    text-transform: lowercase;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+
+    &_transparent {
+      position: absolute;
+      right: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-size: cover;
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+  }
+}
+
+.testDiv {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  div {
+    max-width: 45vw;
+  }
+} 
