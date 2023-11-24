@@ -1,0 +1,17 @@
+.appContainer {
+   display: flex;
+   flex-direction: column;
+   overflow: hidden;
+   justify-content: center;
+   align-items: center;
+}
+
+.gallery {
+   margin-top: 100px;
+
+   &Title {
+      color: rgb(15, 105, 190);
+      font-size: 2rem;
+      text-align: center;
+   }
+}
