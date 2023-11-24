@@ -20,7 +20,7 @@ const Main = ({
           }}>
             <div className={style.mainRight}>
               <div className={style.mainTextContainer}>
-                <span className={style.mainText}>{text}</span>
+                <span className={style.mainText} dangerouslySetInnerHTML={{__html: text}} />
               </div>
             </div>
           </div>
