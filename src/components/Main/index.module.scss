@@ -1,24 +1,25 @@
-.coverCard {
+.main {
   width: 100vw;
   height: 100vh;
   background-size: cover;
-
-  &__title {
-/*     position: absolute;
+  
+  &Blur {
+    position: absolute;
     z-index: 1;
     top: 0;
     right: 0;
-    width: 50vw;
+    width: 48vw;
     height: 100vh;
     overflow: hidden;
     font-size: 180px;
     line-height: 1;
     font-weight: bold;
     text-transform: lowercase;
-    background: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(5px);  */
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px); 
+  }
 
-    &_transparent {
+    &Transparent {
       position: absolute;
       right: 0;
       width: 100vw;
@@ -30,18 +31,18 @@
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
+
+      &Container {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+
+      &Text {
+        max-width: 45vw;
+      }
     }
-  }
 }
 
-.testDiv {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-
-  div {
-    max-width: 45vw;
-  }
-} 
