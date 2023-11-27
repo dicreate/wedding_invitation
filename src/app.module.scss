@@ -6,12 +6,21 @@
    align-items: center;
 }
 
+.title {
+   color: rgb(15, 105, 190);
+   font-size: 2rem;
+   text-align: center;
+}
+
 .gallery {
    margin-top: 100px;
+}
 
-   &Title {
-      color: rgb(15, 105, 190);
-      font-size: 2rem;
-      text-align: center;
-   }
+
+.dinnerMap {
+   margin-top: 100px;
+}
+
+.ceremonyMap {
+   margin-top: 100px;
 }
