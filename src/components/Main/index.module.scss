@@ -2,6 +2,21 @@
   width: 100vw;
   height: 100vh;
   background-size: cover;
+
+  &Navigation {
+    position: fixed;
+    height: 60px;
+    width: 100vw;
+    background-color: rgba(255,255,255,0.6);
+    box-shadow: 0 0 8px rgba(45,41,38,0.3);
+    backdrop-filter: blur(4px);
+    border-bottom-left-radius: 32px;
+    border-bottom-right-radius: 32px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   
   &Blur {
     position: absolute;
@@ -55,5 +70,9 @@
     &Text {
       margin-right: 1vw;
     }
+}
+
+.scrolled {
+  background-color: rgba(255,255,255,0);
 }
 
