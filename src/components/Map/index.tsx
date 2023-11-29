@@ -2,10 +2,13 @@ import style from './index.module.scss'
 import { YMaps, Map, Placemark, GeolocationControl, TrafficControl, TypeSelector, RouteButton } from '@pbe/react-yandex-maps';
 
 interface MapProps {
-  coordinates: [number, number]
+  coordinates: [number, number],
+  balloon: string
 }
 
-const MapComponent: React.FC<MapProps> = ({ coordinates }) => {
+
+
+const MapComponent: React.FC<MapProps> = ({ coordinates, balloon }) => {
   return (
     <div className={style.map}>
       <YMaps>
@@ -24,7 +27,7 @@ const MapComponent: React.FC<MapProps> = ({ coordinates }) => {
             defaultGeometry={coordinates}
             properties={{
               balloonContentBody:
-                'Усадьба "Барыш"',
+                balloon,
             }}
           />
           {/* @ts-expect-error Всё согласно документации*/}

@@ -6,39 +6,31 @@
    align-items: center;
 }
 
-.title {
-   font-size: 2rem;
-   text-transform: uppercase;
-   color: rgb(15, 105, 190);
-}
-
-.gallery {
+.section {
    margin-top: 100px;
-}
 
+   &Text {
+      text-align: center;
+      font-size: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+   }
 
-.dinnerMap {
-   margin-top: 100px;
-}
+   &Title {
+      font-size: 2rem;
+      text-transform: uppercase;
+      color: rgb(15, 105, 190);
+   }
 
-.sectionText {
-   text-align: center;
-   font-size: 1.4rem;
-   display: flex;
-   flex-direction: column;
-   gap: 10px;
-}
-
-.iconContainer {
-   font-size: 2.5rem;
-   color: rgb(15, 105, 190);
-}
-
-.ceremonyMap {
-   margin-top: 100px;
+   &Icon {
+      font-size: 2.5rem;
+      color: rgb(15, 105, 190);
+   }
 }
 
 .address {
    font-size: 1.2rem;
    color: rgba(45,41,38,0.8);
 }
+

@@ -15,10 +15,10 @@ function App() {
           image="/image.jpg"
         />
       </section>
-      <section className={style.gallery} id="loveStory">
+      <section className={style.section} id="loveStory">
         <div className={style.sectionText}>
-          <h3 className={style.title}>Love Story</h3>
-          <div className={style.iconContainer}><GiLovers /></div>
+          <h3 className={style.sectionTitle}>Love Story</h3>
+          <div className={style.sectionIcon}><GiLovers /></div>
         </div>
         <Gallery
           photos={[
@@ -31,23 +31,26 @@ function App() {
             { id: 7, src: "/photos/7.jpg", preview: "/photos/preview/7.jpg", description: "photo 7" },
           ]} />
       </section>
-      <section className={style.ceremonyMap} id="ceremonyMap">
+      <section>
+
+      </section>
+      <section className={style.section} id="ceremonyMap">
         <div className={style.sectionText}>
-          <h3 className={style.title}>Венчание</h3>
-          <div className={style.iconContainer}><PiChurch /></div>
+          <h3 className={style.sectionTitle}>Венчание</h3>
+          <div className={style.sectionIcon}><PiChurch /></div>
           <span>Костёл Воздвижения Креста Господня</span>
           <span className={style.address}>Лида, Советская ул.,2</span>
         </div>
-        <Map coordinates={[53.889263, 25.303251]} />
+        <Map coordinates={[53.889263, 25.303251]} balloon={"Лида, Советская ул.,2"} />
       </section>
-      <section className={style.dinnerMap} id="dinnerMap">
+      <section className={style.section} id="dinnerMap">
         <div className={style.sectionText}>
-          <h3 className={style.title}>Выездная регистрация и банкет</h3>
-          <div className={style.iconContainer}><FaUtensils /></div>
+          <h3 className={style.sectionTitle}>Выездная регистрация и банкет</h3>
+          <div className={style.sectionIcon}><FaUtensils /></div>
           <span>Усадьба "Барыш"</span>
           <span className={style.address}>Гродненская область, Вороновский район</span>
         </div>
-        <Map coordinates={[53.964824, 25.124172]} />
+        <Map coordinates={[53.964824, 25.124172]} balloon="Гродненская область, Вороновский район" />
       </section>
     </div>
 
