@@ -7,9 +7,9 @@
 }
 
 .title {
-   color: rgb(15, 105, 190);
    font-size: 2rem;
-   text-align: center;
+   text-transform: uppercase;
+   color: rgb(15, 105, 190);
 }
 
 .gallery {
@@ -21,6 +21,24 @@
    margin-top: 100px;
 }
 
+.sectionText {
+   text-align: center;
+   font-size: 1.4rem;
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
+
+.iconContainer {
+   font-size: 2.5rem;
+   color: rgb(15, 105, 190);
+}
+
 .ceremonyMap {
    margin-top: 100px;
+}
+
+.address {
+   font-size: 1.2rem;
+   color: rgba(45,41,38,0.8);
 }

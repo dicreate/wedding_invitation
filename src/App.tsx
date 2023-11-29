@@ -2,6 +2,8 @@ import Main from "./components/Main"
 import { Gallery } from "./components/Gallery"
 import style from "./app.module.scss"
 import { GiLovers } from "react-icons/gi";
+import { PiChurch } from "react-icons/pi";
+import { FaUtensils } from "react-icons/fa";
 import Map from "./components/Map";
 
 function App() {
@@ -14,7 +16,10 @@ function App() {
         />
       </section>
       <section className={style.gallery} id="loveStory">
-        <h3 className={style.title}>Love Story <GiLovers /></h3>
+        <div className={style.sectionText}>
+          <h3 className={style.title}>Love Story</h3>
+          <div className={style.iconContainer}><GiLovers /></div>
+        </div>
         <Gallery
           photos={[
             { id: 1, src: "/photos/1.jpg", preview: "/photos/preview/1.jpg", description: "photo 1" },
@@ -27,11 +32,21 @@ function App() {
           ]} />
       </section>
       <section className={style.ceremonyMap} id="ceremonyMap">
-        <h3 className={style.title}>Венчание</h3>
+        <div className={style.sectionText}>
+          <h3 className={style.title}>Венчание</h3>
+          <div className={style.iconContainer}><PiChurch /></div>
+          <span>Костёл Воздвижения Креста Господня</span>
+          <span className={style.address}>Лида, Советская ул.,2</span>
+        </div>
         <Map coordinates={[53.889263, 25.303251]} />
       </section>
       <section className={style.dinnerMap} id="dinnerMap">
-        <h3 className={style.title}>Выездная регистрация и банкет</h3>
+        <div className={style.sectionText}>
+          <h3 className={style.title}>Выездная регистрация и банкет</h3>
+          <div className={style.iconContainer}><FaUtensils /></div>
+          <span>Усадьба "Барыш"</span>
+          <span className={style.address}>Гродненская область, Вороновский район</span>
+        </div>
         <Map coordinates={[53.964824, 25.124172]} />
       </section>
     </div>
