@@ -7,7 +7,7 @@ interface LinkItem {
 
 const Navigation = () => {
 
-   const links: LinkItem[] = [{ title: "Приглашение", link: '#invited' }, { title: "Love Story", link: '#loveStory' }, { title: "Местоположение венчания", link: '#ceremonyMap' }, { title: "Местоположение банкета", link: '#dinnerMap' }];
+   const links: LinkItem[] = [{ title: "Приглашение", link: '#invited' }, { title: "Love Story", link: '#loveStory' }, { title: "Программа", link: '#schedule' }, { title: "Местоположение венчания", link: '#ceremonyMap' }, { title: "Местоположение банкета", link: '#dinnerMap' }];
 
    return (
       <ul className={styles.navigation}>

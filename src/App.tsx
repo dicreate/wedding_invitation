@@ -4,6 +4,7 @@ import style from "./app.module.scss"
 import { GiLovers } from "react-icons/gi";
 import { PiChurch } from "react-icons/pi";
 import { FaUtensils } from "react-icons/fa";
+import { GrSchedules } from "react-icons/gr";
 import Map from "./components/Map";
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
     <div className={style.appContainer} id="invited">
       <section>
         <Main
-          text="Дорогие друзья и близкие!<br />Мы с невероятной радостью приглашаем вас разделить с нами наше счастье в этот замечательный день — день нашей свадьбы!<br />Ваше присутствие для нас чрезвычайно важно. Будем рады разделить с вами этот момент счастья и создать вместе незабываемые воспоминания.<br />Пожалуйста, дайте нам знать, будете ли вы с нами.<br />С любовью и благодарностью,<br />Дима и Карина "
+          text="Дима & Карина <br /> 24.08.2024 <br /> Дорогие друзья и близкие!<br />Мы с невероятной радостью приглашаем вас разделить с нами наше счастье в этот замечательный день — день нашей свадьбы!<br />Ваше присутствие для нас чрезвычайно важно. Будем рады разделить с вами этот момент счастья и создать вместе незабываемые воспоминания.<br />Пожалуйста, дайте нам знать, будете ли вы с нами."
           image="/image.jpg"
         />
       </section>
@@ -31,8 +32,12 @@ function App() {
             { id: 7, src: "/photos/7.jpg", preview: "/photos/preview/7.jpg", description: "photo 7" },
           ]} />
       </section>
-      <section>
-
+      <section className={style.section} id="schedule">
+        <div className={style.sectionText}>
+          <h3 className={style.sectionTitle}>Программа свадебного дня</h3>
+          <div className={style.sectionIcon}><GrSchedules /></div>
+          <span>24 августа 2024 г.</span>
+        </div>
       </section>
       <section className={style.section} id="ceremonyMap">
         <div className={style.sectionText}>
