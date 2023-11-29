@@ -6,6 +6,7 @@ import { PiChurch } from "react-icons/pi";
 import { FaUtensils } from "react-icons/fa";
 import { GrSchedules } from "react-icons/gr";
 import Map from "./components/Map";
+import Schedule from "./components/Schedule";
 
 function App() {
   return (
@@ -32,11 +33,12 @@ function App() {
             { id: 7, src: "/photos/7.jpg", preview: "/photos/preview/7.jpg", description: "photo 7" },
           ]} />
       </section>
-      <section className={style.section} id="schedule">
+      <section className={`${style.section} ${style.schedule}`} id="schedule">
         <div className={style.sectionText}>
           <h3 className={style.sectionTitle}>Программа свадебного дня</h3>
           <div className={style.sectionIcon}><GrSchedules /></div>
-          <span>24 августа 2024 г.</span>
+          <span className={style.scheduleDate}>24 августа 2024 г.</span>
+          <Schedule />
         </div>
       </section>
       <section className={style.section} id="ceremonyMap">
