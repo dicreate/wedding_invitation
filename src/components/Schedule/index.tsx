@@ -3,7 +3,21 @@ import style from "./index.module.scss"
 import Modal from "../Modal";
 import Map from "../Map";
 
+interface ScheduleItem {
+   title: string;
+   place: string;
+   time: string;
+   address: string;
+   coordinates: [number, number];
+}
+
 export const Schedule = () => {
+
+   const items: ScheduleItem[] = [
+      { title: "Венчание", place: "Костёл Воздвижения Креста Господня", address: 'Лида, Советская ул.,2', time: "11:00", coordinates: [53.889263, 25.303251] },
+      { title: "Выездная роспись", place: 'Усадьба "Барыш"', address: 'Гродненская область, Вороновский район', time: "15:00", coordinates: [53.964824, 25.124172] },
+      { title: "Праздничный ужин", place: 'Усадьба "Барыш"', address: 'Гродненская область, Вороновский район', time: "17:00", coordinates: [53.964824, 25.124172] }
+   ];
 
    const [modalActive, setModalActive] = useState<boolean>(false);
    const [mapCoordinates, setMapCoordinates] = useState<[number, number]>([53.964824, 25.124172]);
@@ -20,50 +34,21 @@ export const Schedule = () => {
    return (
       <>
          <ul className={style.schedule}>
-            <li>
-               <div className={style.time}>
-                  <h3>09:00</h3>
-               </div>
-               <div className={style.details}>
-                  <h3>Венчание</h3>
-
-                  <p>Костёл Воздвижения Креста Господня</p>
-                  <p className={style.address}>
-                     <span onClick={() => handleSpanClick([53.889263, 25.303251], "Лида, Советская ул.,2")}>
-                        Лида, Советская ул.,2</span>
-                  </p>
-               </div>
-            </li>
-            <li>
-               <div className={style.time}>
-                  <h3>13:00</h3>
-               </div>
-               <div className={style.details}>
-                  <h3>Выездная роспись</h3>
-
-                  <p>Усадьба "Барыш"</p>
-                  <p className={style.address}>
-                     <span onClick={() => handleSpanClick([53.964824, 25.124172], "Гродненская область, Вороновский район")}>
-                        Гродненская область, Вороновский район
-                     </span>
-                  </p>
-               </div>
-            </li>
-            <li>
-               <div className={style.time}>
-                  <h3>18:00</h3>
-               </div>
-               <div className={style.details}>
-                  <h3>Праздничный ужин</h3>
-
-                  <p>Усадьба "Барыш"</p>
-                  <p className={style.address}>
-                     <span onClick={() => handleSpanClick([53.964824, 25.124172], "Гродненская область, Вороновский район")}>
-                        Гродненская область, Вороновский район
-                     </span>
-                  </p>
-               </div>
-            </li>
+            {items.map((item, index) => (
+               <li key={index}>
+                  <div className={style.time}>
+                     <h3>{item.time}</h3>
+                  </div>
+                  <div className={style.details}>
+                     <h3>{item.title}</h3>
+                     <p>{item.place}</p>
+                     <p className={style.address}>
+                        <span onClick={() => handleSpanClick(item.coordinates, item.place)}>
+                           {item.address}</span>
+                     </p>
+                  </div>
+               </li>
+            ))}
          </ul>
          <Modal active={modalActive} setActive={setModalActive}>
             <Map coordinates={mapCoordinates} balloon={mapBalloon} key={key} />
