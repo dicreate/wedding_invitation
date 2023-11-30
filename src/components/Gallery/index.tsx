@@ -9,22 +9,22 @@ interface GalleryProps {
    photos: Photo[];
 }
 
-export const Gallery: React.FC<GalleryProps> = ({ photos }) => {
+const Gallery: React.FC<GalleryProps> = ({ photos }) => {
 
    const [indexActivePhoto, setIndexActivePhoto] = React.useState(0);
    /* const activePhoto = photos[indexActivePhoto]; */
    const prevPhoto = photos[indexActivePhoto - 1];
    const nextPhoto = photos[indexActivePhoto + 1];
 
-   if(!photos.length) {
+   if (!photos.length) {
       return null;
    }
 
-  
+
    return (
       <div className={style.gallery}>
          <div className={style.galleryWrapper}>
-            <MainPhoto 
+            <MainPhoto
                photos={photos}
                indexActivePhoto={indexActivePhoto}
             />
@@ -40,7 +40,7 @@ export const Gallery: React.FC<GalleryProps> = ({ photos }) => {
                }}
             />
          </div>
-         <PreviewGallery 
+         <PreviewGallery
             activePhotoIndex={indexActivePhoto}
             photos={photos}
             className={style.galleryPreviewList}
@@ -49,3 +49,5 @@ export const Gallery: React.FC<GalleryProps> = ({ photos }) => {
       </div>
    )
 };
+
+export default Gallery

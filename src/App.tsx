@@ -1,12 +1,12 @@
-import Main from "./components/Main"
-import { Gallery } from "./components/Gallery"
+import { Main, Map, Schedule, Gallery, Questions } from "./components"
 import style from "./app.module.scss"
+import { DiDigitalOcean } from "react-icons/di";
+
 import { GiLovers } from "react-icons/gi";
 import { PiChurch } from "react-icons/pi";
 import { FaUtensils } from "react-icons/fa";
 import { GrSchedules } from "react-icons/gr";
-import Map from "./components/Map";
-import { Schedule } from "./components/Schedule";
+import { FaPersonCircleQuestion } from "react-icons/fa6";
 
 function App() {
   return (
@@ -17,6 +17,7 @@ function App() {
           image="/image.jpg"
         />
       </section>
+
       <section className={style.section} id="loveStory">
         <div className={style.sectionText}>
           <h3 className={style.sectionTitle}>Love Story</h3>
@@ -33,6 +34,7 @@ function App() {
             { id: 7, src: "/photos/7.jpg", preview: "/photos/preview/7.jpg", description: "photo 7" },
           ]} />
       </section>
+
       <section className={`${style.section} ${style.schedule}`} id="schedule">
         <div className={style.sectionText}>
           <h3 className={style.sectionTitle}>Программа свадебного дня</h3>
@@ -41,6 +43,7 @@ function App() {
           <Schedule />
         </div>
       </section>
+
       <section className={style.section} id="ceremonyMap">
         <div className={style.sectionText}>
           <h3 className={style.sectionTitle}>Венчание</h3>
@@ -50,6 +53,7 @@ function App() {
         </div>
         <Map coordinates={[53.889263, 25.303251]} balloon={"Лида, Советская ул.,2"} />
       </section>
+
       <section className={style.section} id="dinnerMap">
         <div className={style.sectionText}>
           <h3 className={style.sectionTitle}>Выездная регистрация и банкет</h3>
@@ -59,6 +63,19 @@ function App() {
         </div>
         <Map coordinates={[53.964824, 25.124172]} balloon="Гродненская область, Вороновский район" />
       </section>
+
+      <section className={style.section} id="questions">
+        <div className={style.sectionText}>
+          <h3 className={style.sectionTitle}>Отвечаем на ваши вопросы</h3>
+          <div className={style.sectionIcon}><FaPersonCircleQuestion /></div>
+          <Questions />
+        </div>
+      </section>
+
+      <footer className={style.footer}>
+        <div className={style.footerText}>Спасибо, что вы с нами !</div>
+        <div className={style.footerIcon}><DiDigitalOcean /></div>
+      </footer>
     </div>
 
   )

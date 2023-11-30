@@ -14,35 +14,35 @@ const getPhotoByRef = (ref: Reft, index: number): HTMLElement | null =>
    ref.current!.querySelector(`img:nth-of-type(${index + 1})`)
 )
 
-const hidePhoto = (element :HTMLElement | null) => {
-   if(!element) {
+const hidePhoto = (element: HTMLElement | null) => {
+   if (!element) {
       return;
    }
 
    element.dataset.active = 'false';
 
    if (element.previousSibling instanceof HTMLElement) {
-      (element.previousSibling as HTMLElement).dataset.active = 'false';     
+      (element.previousSibling as HTMLElement).dataset.active = 'false';
    }
 
    if (element.nextSibling instanceof HTMLElement) {
-      (element.nextSibling as HTMLElement).dataset.active = 'false';     
+      (element.nextSibling as HTMLElement).dataset.active = 'false';
    }
 }
 
-const showPhoto = (element :HTMLElement | null) => {
-   if(!element) {
+const showPhoto = (element: HTMLElement | null) => {
+   if (!element) {
       return;
    }
 
    element.dataset.active = 'true';
 
    if (element.previousSibling instanceof HTMLElement) {
-      (element.previousSibling as HTMLElement).dataset.active = 'prepared';     
+      (element.previousSibling as HTMLElement).dataset.active = 'prepared';
    }
 
    if (element.nextSibling instanceof HTMLElement) {
-      (element.nextSibling as HTMLElement).dataset.active = 'prepared';     
+      (element.nextSibling as HTMLElement).dataset.active = 'prepared';
    }
 
 }
@@ -52,7 +52,7 @@ export const MainPhoto: React.FC<MainPhotoProps> = ({ photos, indexActivePhoto, 
    const containerRef = useRef<HTMLDivElement | null>(null);
 
    useLayoutEffect(() => {
-      if(!containerRef.current) {
+      if (!containerRef.current) {
          return;
       }
 

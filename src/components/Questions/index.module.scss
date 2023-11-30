@@ -1,0 +1,25 @@
+.questions {
+   margin-top: 50px;
+   display: flex;
+   flex-direction: column;
+   gap: 50px;
+}
+
+.content {
+   display: flex;
+   flex-direction: column;
+   gap: 30px;
+   max-width: 600px;
+   text-align: left;
+
+   &Title {
+      font-weight: 500;
+      font-size: 2.4rem;
+   }
+
+   &Text {
+      font-size: 1.8rem;
+      color: rgba(45,41,38,0.8);
+      line-height: 1.5;
+   }
+}

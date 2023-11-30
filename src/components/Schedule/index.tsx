@@ -11,7 +11,7 @@ interface ScheduleItem {
    coordinates: [number, number];
 }
 
-export const Schedule = () => {
+const Schedule = () => {
 
    const items: ScheduleItem[] = [
       { title: "Венчание", place: "Костёл Воздвижения Креста Господня", address: 'Лида, Советская ул.,2', time: "11:00", coordinates: [53.889263, 25.303251] },
@@ -57,4 +57,6 @@ export const Schedule = () => {
 
    )
 }
+
+export default Schedule
 
