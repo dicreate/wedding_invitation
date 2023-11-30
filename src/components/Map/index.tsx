@@ -15,7 +15,7 @@ const MapComponent: React.FC<MapProps> = ({ coordinates, balloon }) => {
           height="60vh"
           defaultState={{
             center: coordinates,
-            zoom: 9,
+            zoom: 15,
             controls: ["zoomControl", "fullscreenControl"],
           }}
           modules={["control.ZoomControl", "control.FullscreenControl"]}
