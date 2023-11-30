@@ -6,8 +6,6 @@ interface MapProps {
   balloon: string
 }
 
-
-
 const MapComponent: React.FC<MapProps> = ({ coordinates, balloon }) => {
   return (
     <div className={style.map}>

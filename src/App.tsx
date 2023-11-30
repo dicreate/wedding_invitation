@@ -6,7 +6,7 @@ import { PiChurch } from "react-icons/pi";
 import { FaUtensils } from "react-icons/fa";
 import { GrSchedules } from "react-icons/gr";
 import Map from "./components/Map";
-import Schedule from "./components/Schedule";
+import { Schedule } from "./components/Schedule";
 
 function App() {
   return (
