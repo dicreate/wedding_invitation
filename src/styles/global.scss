@@ -2,4 +2,14 @@ html {
 	scroll-behavior: smooth;
 	font-size: 10px;
 	font-family: 'Inter', sans-serif;
+	overflow-x: auto;
+}
+
+::-webkit-scrollbar {
+	display: none; 
+	-ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none; 
+    width: 0;  /* Remove scrollbar space */
+	height: 0;
+    background: transparent;  /* Optional: just make scrollbar invisible */
 }

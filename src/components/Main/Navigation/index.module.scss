@@ -5,6 +5,9 @@
    gap: 10px;
    list-style: none;
    height: 100%;
+   white-space: nowrap;
+   overflow-x: auto;
+   max-width: 100%;
 }
 
 .navigation li {
@@ -27,4 +30,14 @@
 .navigation li:hover {
    color: white;
    background-color: rgb(15, 105, 190);
+}
+
+@media (max-width: 780px) {
+   .navigation {
+      gap: 0;
+   }
+
+   .navigation li a { 
+      padding: 0 10px;
+   }
 }
