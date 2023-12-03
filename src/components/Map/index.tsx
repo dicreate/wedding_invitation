@@ -11,7 +11,7 @@ const MapComponent: React.FC<MapProps> = ({ coordinates, balloon }) => {
     <div className={style.map}>
       <YMaps>
         <Map
-          width="80vw"
+          width="100vw"
           height="60vh"
           defaultState={{
             center: coordinates,
