@@ -1,7 +1,5 @@
 .navigation {
    display: flex;
-   align-items: center;
-   justify-content: center;
    gap: 10px;
    list-style: none;
    height: 100%;
@@ -17,6 +15,7 @@
    text-transform: uppercase;
    height: 100%;
    border-radius: 5px;
+   white-space: nowrap;
 }
 
 .navigation li a {
@@ -25,6 +24,8 @@
    align-items: center;
    justify-content: center;
    padding: 0 20px;
+   transition: color 0.3s, background-color 0.3s;
+   white-space: nowrap;
 }
 
 .navigation li:hover {
@@ -35,6 +36,7 @@
 @media (max-width: 780px) {
    .navigation {
       gap: 0;
+      
    }
 
    .navigation li a { 

@@ -6,7 +6,7 @@
   &Navigation {
     position: fixed;
     height: 60px;
-    width: 100vw;
+    width: 100%;
     background-color: rgba(255,255,255,0.4);
     box-shadow: 0 0 8px rgba(45,41,38,0.3);
     backdrop-filter: blur(4px);
@@ -77,3 +77,14 @@
   background-color: rgba(255,255,255,0);
 }
 
+
+@media (max-width: 780px) {
+  .navigation {
+     gap: 0;
+     
+  }
+
+  .navigation li a { 
+     padding: 0 10px;
+  }
+}
