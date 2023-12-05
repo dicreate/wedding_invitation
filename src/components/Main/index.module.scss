@@ -26,9 +26,6 @@
     width: 42vw;
     height: 100vh;
     overflow: hidden;
-    font-size: calc(1.2vh + 1.2vw);
-    line-height: 1.5;
-    font-weight: bold;
     background: rgba(0, 0, 0, 0.65);
     backdrop-filter: blur(5px); 
   }
@@ -55,21 +52,6 @@
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-    }
-
-    &TextContainer {
-      margin-top: 60px;
-      max-width: 40vw;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-
-    &Text {
-      margin-right: 1vw;
     }
 }
 

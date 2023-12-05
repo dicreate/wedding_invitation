@@ -1,9 +1,9 @@
 import style from './index.module.scss'
 import Navigation from './Navigation';
-import { useEffect, useRef } from 'react';
+import { ReactNode, useEffect, useRef } from 'react';
 interface MainProps {
   image: string;
-  text: string;
+  text: ReactNode;
 }
 
 const Main = ({
@@ -46,9 +46,7 @@ const Main = ({
             backgroundImage: `url(${image})`,
           }}>
           <div className={style.mainRight}>
-            <div className={style.mainTextContainer}>
-              <span className={style.mainText} dangerouslySetInnerHTML={{ __html: text }} />
-            </div>
+            {text}
           </div>
         </div>
       </div>
