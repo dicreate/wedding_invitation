@@ -77,14 +77,11 @@
   background-color: rgba(255,255,255,0);
 }
 
-
-@media (max-width: 780px) {
-  .navigation {
-     gap: 0;
-     
-  }
-
-  .navigation li a { 
-     padding: 0 10px;
+@media (max-width: 640px) {
+  .main {
+    &Navigation {
+      border-bottom-left-radius: 16px;
+      border-bottom-right-radius: 16px;
+    }
   }
 }
