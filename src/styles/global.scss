@@ -7,9 +7,9 @@ html {
 
 ::-webkit-scrollbar {
 	display: none; 
-	-ms-overflow-style: none;  /* Internet Explorer 10+ */
-    scrollbar-width: none; 
-    width: 0;  /* Remove scrollbar space */
+	-ms-overflow-style: none; 
+	scrollbar-width: none; 
+	width: 0; 
 	height: 0;
-    background: transparent;  /* Optional: just make scrollbar invisible */
+	background: transparent;  
 }
