@@ -42,7 +42,7 @@ function App() {
       </section>
 
       <div id="loveStory"></div>
-      
+
       <section className={style.section}>
         <div className={style.sectionContent}>
           <h3 className={style.sectionTitle}>Love Story</h3>
@@ -62,7 +62,7 @@ function App() {
 
       <div id="schedule"></div>
 
-      <section className={`${style.section} ${style.schedule}`}>  
+      <section className={`${style.section} ${style.schedule}`}>
         <div className={style.sectionContent}>
           <h3 className={style.sectionTitle}>Программа свадебного дня</h3>
           <div className={style.sectionIcon}><GrSchedules /></div>
