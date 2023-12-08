@@ -2,7 +2,7 @@ import { Main, Map, Schedule, Gallery, Questions } from "./components"
 import style from "./app.module.scss"
 import { DiDigitalOcean } from "react-icons/di";
 
-import { GiLovers } from "react-icons/gi";
+import { GiLovers, GiGloves } from "react-icons/gi";
 import { PiChurch } from "react-icons/pi";
 import { FaUtensils } from "react-icons/fa";
 import { GrSchedules } from "react-icons/gr";
@@ -46,7 +46,7 @@ function App() {
       <section className={style.section}>
         <div className={style.sectionContent}>
           <h3 className={style.sectionTitle}>Love Story</h3>
-          <div className={style.sectionIcon}><GiLovers /></div>
+          <div className={style.sectionIcon}><GiGloves /></div>
         </div>
         <Gallery
           photos={[
