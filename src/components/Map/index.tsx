@@ -9,7 +9,10 @@ interface MapProps {
 const MapComponent: React.FC<MapProps> = ({ coordinates, balloon }) => {
   return (
     <div className={style.map}>
-      <YMaps>
+      <YMaps enterprise
+        query={{
+          apikey: 'ahjgasgdjhasgd',
+        }}>
         <Map
           width="100vw"
           height="60vh"
