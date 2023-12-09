@@ -12,7 +12,8 @@ function App() {
 
   return (
     <div className={style.appContainer}>
-      <section>
+      123
+      {/*    <section>
         <Main
           text={
             <div className={style.main}>
@@ -108,7 +109,7 @@ function App() {
       <footer className={style.footer}>
         <div className={style.footerText}>Спасибо, что вы с нами !</div>
         <div className={style.footerIcon}><DiDigitalOcean /></div>
-      </footer>
+      </footer> */}
     </div>
 
   )
