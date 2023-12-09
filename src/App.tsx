@@ -1,4 +1,4 @@
-import { Main, Map, Schedule, Gallery, Questions } from "./components"
+/* import { Main, Map, Schedule, Gallery, Questions } from "./components"
 import style from "./app.module.scss"
 import { DiDigitalOcean } from "react-icons/di";
 
@@ -6,13 +6,16 @@ import { GiLovers, GiGloves } from "react-icons/gi";
 import { PiChurch } from "react-icons/pi";
 import { FaUtensils } from "react-icons/fa";
 import { GrSchedules } from "react-icons/gr";
-import { FaPersonCircleQuestion } from "react-icons/fa6";
+import { FaPersonCircleQuestion } from "react-icons/fa6"; */
+
+import style from "./app.module.scss"
 
 function App() {
 
   return (
     <div className={style.appContainer}>
-      <section>
+      123
+      {/*  <section>
         <Main
           text={
             <div className={style.main}>
@@ -108,7 +111,7 @@ function App() {
       <footer className={style.footer}>
         <div className={style.footerText}>Спасибо, что вы с нами !</div>
         <div className={style.footerIcon}><DiDigitalOcean /></div>
-      </footer>
+      </footer> */}
     </div>
 
   )
