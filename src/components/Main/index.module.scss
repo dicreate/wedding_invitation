@@ -24,7 +24,6 @@
   &Blur {
     position: absolute;
     z-index: 1;
-    top: 0;
     right: 0;
     width: 42vw;
     height: 100vh;
@@ -32,8 +31,6 @@
     background: rgba(0, 0, 0, 0.65);
     backdrop-filter: blur(5px); 
   }
-
-
 
     &Transparent {
       position: absolute;
@@ -62,11 +59,34 @@
   background-color: rgba(255,255,255,0);
 }
 
-@media (max-width: 640px) {
+/* @media (max-width: 640px) {
   .main {
-    &Navigation {
-      border-bottom-left-radius: 16px;
-      border-bottom-right-radius: 16px;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    
+    &Blur {
+      position: absolute;
+      z-index: 1;
+      right: 0;
+      bottom: 0;
+      width: 100vw;
+      height: 30vh;
+      overflow: hidden;
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(5px); 
     }
+  
+      &Transparent {
+        bottom: 0;
+      }
+  
+      &Right {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+      }
   }
-}
+} */
