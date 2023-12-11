@@ -16,7 +16,7 @@ function App() {
         <Main
           text={
             <div className={style.main}>
-              <span className={style.mainDate}>24.08.2023</span>
+              <span className={style.mainDate}>24.08.2024</span>
               <span className={style.mainName}>Дима</span>
               <div className={style.mainHeart}>♥</div>
               <span className={style.mainName}>Карина</span>

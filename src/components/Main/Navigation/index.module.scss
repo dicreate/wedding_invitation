@@ -29,9 +29,25 @@
    white-space: nowrap;
 }
 
-.navigation li:hover {
-   color: white;
-   background-color: rgb(15, 105, 190);
+
+
+@media(hover: hover) {
+   .navigation li:hover {
+      color: white;
+      background-color: rgb(15, 105, 190);
+   }
+}
+
+@media(hover: none) {
+   .navigation li:hover {
+      color: black;
+      background-color: transparent;
+   }
+
+   .navigation li:active {
+      color: white;
+      background-color: rgb(15, 105, 190);
+   }
 }
 
 @media (max-width: 780px) {
