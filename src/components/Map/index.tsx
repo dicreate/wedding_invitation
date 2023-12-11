@@ -1,18 +1,23 @@
 import style from './index.module.scss'
-import { YMaps, Map, Placemark, TrafficControl, TypeSelector } from '@pbe/react-yandex-maps';
-
+import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps';
 interface MapProps {
   coordinates: [number, number],
   balloon: string
 }
 
+
+
 const MapComponent: React.FC<MapProps> = ({ coordinates, balloon }) => {
+
   return (
     <div className={style.map}>
-      <YMaps enterprise
+      <YMaps
         query={{
           apikey: 'e5fbadfd-8732-41d7-84b8-04bd64adc323',
-        }}>
+          lang: 'ru_RU',
+        }}
+        preload={true}
+      >
         <Map
           width="100vw"
           height="60vh"
@@ -31,10 +36,6 @@ const MapComponent: React.FC<MapProps> = ({ coordinates, balloon }) => {
                 balloon,
             }}
           />
-          {/* @ts-expect-error Всё согласно документации*/}
-          <TrafficControl options={{ float: 'right' }} />
-          {/* @ts-expect-error Всё согласно документации*/}
-          <TypeSelector options={{ float: 'right' }} />
         </Map>
       </YMaps>
     </div>
