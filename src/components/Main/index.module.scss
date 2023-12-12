@@ -71,17 +71,11 @@
     background-size: cover;
     
     &Blur {
-      position: absolute;
-      z-index: 1;
-      right: 0;
       bottom: 0;
       width: 100vw;
       height: 30vh;
       height: 30svh;
-      overflow: hidden;
-      background: rgba(0, 0, 0, 0.65);
-      backdrop-filter: blur(5px); 
-    }
+      background: rgba(255, 255, 255, 0.2);    }
   
       &Transparent {
         bottom: 0;
