@@ -3,6 +3,7 @@ import style from "./app.module.scss"
 import { DiDigitalOcean } from "react-icons/di";
 
 import { GiLovers, GiGloves } from "react-icons/gi";
+import { IoHeartSharp } from "react-icons/io5";
 import { PiChurch } from "react-icons/pi";
 import { FaUtensils } from "react-icons/fa";
 import { GrSchedules } from "react-icons/gr";
@@ -36,6 +37,18 @@ function App() {
             <p>Мы с невероятной радостью приглашаем вас разделить с нами наше счастье в этот замечательный день — день нашей свадьбы!</p>
             <p>Ваше присутствие для нас чрезвычайно важно. Будем рады разделить с вами этот момент счастья и создать вместе незабываемые воспоминания.</p>
             <p>Пожалуйста, дайте нам знать, будете ли вы с нами.</p>
+            <div className={style.invitationPhotos}>
+              <div>
+                <img src="./me.jpg" alt="me" />
+              </div>
+              <div>
+                <IoHeartSharp className={style.invitationPhotosIcon} />
+              </div>
+              <div>
+                <img src="./she.jpg" alt="she" />
+              </div>
+            </div>
+
           </div>
         </div>
       </section>

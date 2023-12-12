@@ -38,6 +38,35 @@
    gap: 20px;
    max-width: 840px;
    color: rgba(45, 41, 38, 0.8);
+
+   &Photos {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+
+      div {
+         max-width: 200px;
+         width: 100%;
+         height: auto;
+      }
+
+      div:nth-child(2) {
+         max-width: 60px;
+      }
+
+      div img {
+         width: 100%;
+         border-radius: 50%;
+      }
+
+      &Icon {
+         width: 100%;
+         height: auto;
+         color: rgb(105, 144, 180);
+      }
+   }
 }
 
 .section {
