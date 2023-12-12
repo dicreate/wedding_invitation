@@ -2,12 +2,10 @@ import style from './index.module.scss'
 import Navigation from './Navigation';
 import { ReactNode, useEffect, useRef } from 'react';
 interface MainProps {
-  image: string;
   text: ReactNode;
 }
 
 const Main = ({
-  image,
   text
 }: MainProps) => {
 
@@ -33,18 +31,14 @@ const Main = ({
   }, []);
 
   return (
-    <div className={style.main} style={{
-      backgroundImage: `url(${image})`,
-    }}>
+    <div className={style.main}>
       <div className={style.mainNavigation} ref={mainNavigationRef}>
         <Navigation />
       </div>
       <div className={style.mainBlur}>
         <div
           className={style.mainTransparent}
-          style={{
-            backgroundImage: `url(${image})`,
-          }}>
+        >
           <div className={style.mainRight}>
             {text}
           </div>

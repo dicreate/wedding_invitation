@@ -22,7 +22,6 @@ function App() {
               <span className={style.mainName}>Карина</span>
             </div>
           }
-          image="./image2.jpg"
         />
       </section>
 
