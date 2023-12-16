@@ -15,6 +15,7 @@ const MapComponent: React.FC<MapProps> = ({ coordinates, balloon }) => {
         query={{
           apikey: 'e5fbadfd-8732-41d7-84b8-04bd64adc323',
           lang: 'ru_RU',
+          load: 'package.full',
         }}
         preload={true}
       >
