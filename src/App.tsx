@@ -1,4 +1,4 @@
-import { Main, Map, Schedule, Gallery, Questions } from "./components"
+import { Main, Map, Schedule, Gallery, Questions, Timer } from "./components"
 import style from "./app.module.scss"
 import { DiDigitalOcean } from "react-icons/di";
 
@@ -48,7 +48,7 @@ function App() {
                 <img src="./she.webp" alt="she" />
               </div>
             </div>
-
+            <Timer />
           </div>
         </div>
       </section>
