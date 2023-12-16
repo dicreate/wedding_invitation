@@ -2,7 +2,7 @@
   width: 100vw;
   height: 100vh;
   height: 100svh;
-  background-image: url('/image.jpg');
+  background-image: url('/image.webp');
   background-size: cover;
   background-position: center;
 
@@ -49,7 +49,7 @@
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;   
-      background-image: url('/image.jpg');
+      background-image: url('/image.webp');
       background-position: center;
     }
 
@@ -73,7 +73,7 @@
     height: 100vh;
     height: 100svh;
     background-size: cover;
-    background-image: url('/image-adaptive.jpg');
+    background-image: url('/image-adaptive.webp');
     
     &Blur {
       bottom: 0;
@@ -85,7 +85,7 @@
   
       &Transparent {
         bottom: 0;
-        background-image: url('/image-adaptive.jpg');
+        background-image: url('/image-adaptive.webp');
       }
   
       &Right {

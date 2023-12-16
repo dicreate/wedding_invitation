@@ -39,13 +39,13 @@ function App() {
             <p>Пожалуйста, дайте нам знать, будете ли вы с нами.</p>
             <div className={style.invitationPhotos}>
               <div>
-                <img src="./me.jpg" alt="me" />
+                <img src="./me.webp" alt="me" />
               </div>
               <div>
                 <IoHeartSharp className={style.invitationPhotosIcon} />
               </div>
               <div>
-                <img src="./she.jpg" alt="she" />
+                <img src="./she.webp" alt="she" />
               </div>
             </div>
 
