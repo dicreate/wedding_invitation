@@ -44,22 +44,22 @@ const Timer = () => {
          <div className={style.timer}>
             <div>
                <p>{timerDays}</p>
-               <p><small>Дней</small></p>
+               <p>Дней</p>
             </div>
             <span>:</span>
             <div>
                <p>{timerHours}</p>
-               <p><small>Часов</small></p>
+               <p>Часов</p>
             </div>
             <span>:</span>
             <div>
                <p>{timerMinutes}</p>
-               <p><small>Минут</small></p>
+               <p>Минут</p>
             </div>
             <span>:</span>
             <div>
                <p>{timerSeconds}</p>
-               <p><small>Секунд</small></p>
+               <p>Секунд</p>
             </div>
          </div>
       </div>
