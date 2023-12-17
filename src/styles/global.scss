@@ -12,7 +12,7 @@ html {
  }
 
 ::-webkit-scrollbar-thumb {
-	background-color: #888; /* Цвет ползунка скроллбара */
+	background-color: #c7c5c5; /* Цвет ползунка скроллбара */
 	border-radius: 6px; /* Закругление углов ползунка */
  }
 
@@ -22,4 +22,10 @@ html {
 
  ::-webkit-scrollbar-thumb:hover {
 	background-color: #555; /* Изменяем цвет ползунка при наведении */
+ }
+
+ @media (max-width: 360px) {
+	html {
+		font-size: 8px;
+	}
  }

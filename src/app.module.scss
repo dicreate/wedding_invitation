@@ -26,6 +26,7 @@
 
    &Heart{
       font-size: calc(10vh + 10vw);
+      margin-top: calc(1vh + 1vw);
    }
 }  
 
@@ -148,8 +149,13 @@
       &Date {
          line-height: 1;
       }
+
+      &Name {
+         line-height: 1;
+      }
    
       &Heart{
+         line-height: 1;
          font-size: calc(8vh + 8vw);
       }
    }  
