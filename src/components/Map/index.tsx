@@ -1,5 +1,5 @@
 import style from './index.module.scss'
-import { Map, Placemark } from '@pbe/react-yandex-maps';
+import { Map, Placemark, TypeSelector, TrafficControl, RouteButton, GeolocationControl } from '@pbe/react-yandex-maps';
 interface MapProps {
   coordinates: [number, number],
   balloon: string
@@ -27,9 +27,14 @@ const MapComponent: React.FC<MapProps> = ({ coordinates, balloon }) => {
               balloon,
           }}
         />
+        {/*@ts-expect-error type error from  @pbe/react-yandex-maps*/}
+        <TypeSelector options={{ float: "right" }} />
+        {/*@ts-expect-error type error from  @pbe/react-yandex-maps*/}
+        <TrafficControl options={{ float: "right" }} />
+        <RouteButton options={{ float: "right" }} />
+        <GeolocationControl options={{ float: "left" }} />
       </Map>
     </div>
-
   )
 };
 
