@@ -1,7 +1,2 @@
-```
-npm install
-npm run dev
-```
-
-1. Обратный отсчёт
-2. Адаптив
+1. Smooth scroll animation
+2. Text in all sections
