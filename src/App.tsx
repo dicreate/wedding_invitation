@@ -1,8 +1,11 @@
+import { useLayoutEffect, useRef } from 'react'
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 import { Main, Map, Schedule, Gallery, Questions, Timer } from "./components"
 import style from "./app.module.scss"
+
 import { DiDigitalOcean } from "react-icons/di";
 import { YMaps } from "@pbe/react-yandex-maps";
-
 import { GiLovers, GiGloves } from "react-icons/gi";
 import { IoHeartSharp } from "react-icons/io5";
 import { PiChurch } from "react-icons/pi";
@@ -11,6 +14,66 @@ import { GrSchedules } from "react-icons/gr";
 import { FaPersonCircleQuestion } from "react-icons/fa6";
 
 function App() {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const invitationRef = useRef(null);
+  const scheduleRef = useRef(null);
+  const questionsRef = useRef(null);
+
+  useLayoutEffect(() => {
+    /*  const tl = gsap.timeline({
+       scrollTrigger: {
+         trigger: invitationRef.current,
+         markers: true,
+         start: 'top 80%',
+         end: 'bottom 20%',
+         toggleActions: 'play none none reverse',
+       }
+     }) */
+
+    gsap.from(invitationRef.current, {
+      opacity: 0,
+      x: -100,
+      duration: 2,
+      scrollTrigger: {
+        trigger: invitationRef.current,
+        start: 'top 80%',
+        end: 'bottom 20%',
+        toggleActions: 'play none none reverse',
+      }
+    })
+
+    gsap.from(scheduleRef.current, {
+      opacity: 0,
+      x: -100,
+      duration: 2,
+      scrollTrigger: {
+        trigger: scheduleRef.current,
+        start: 'top 80%',
+        end: 'bottom 20%',
+        toggleActions: 'play none none reverse',
+      }
+    })
+
+    gsap.from(questionsRef.current, {
+      opacity: 0,
+      x: -100,
+      duration: 2,
+      scrollTrigger: {
+        trigger: questionsRef.current,
+        start: 'top 80%',
+        end: 'bottom 20%',
+        toggleActions: 'play none none reverse',
+      }
+    })
+
+    /*     tl.from(questionsRef.current, {
+          opacity: 0,
+          x: -100,
+          duration: 2,
+        }) */
+
+  });
 
   return (
     <YMaps
@@ -41,7 +104,7 @@ function App() {
           <div className={style.sectionContent}>
             <h3 className={style.sectionTitle}>Дима 🕊 Карина</h3>
             <div className={style.sectionIcon}><GiLovers /></div>
-            <div className={style.invitation}>
+            <div className={style.invitation} ref={invitationRef}>
               <p>Дорогие друзья и близкие!</p>
               <p>Мы с невероятной радостью приглашаем вас разделить с нами наше счастье в этот замечательный день — день нашей свадьбы!</p>
               <p>Ваше присутствие для нас чрезвычайно важно. Будем рады разделить с вами этот момент счастья и создать вместе незабываемые воспоминания.</p>
@@ -88,7 +151,9 @@ function App() {
             <h3 className={style.sectionTitle}>Программа свадебного дня</h3>
             <div className={style.sectionIcon}><GrSchedules /></div>
             <span className={style.scheduleDate}>24 августа 2024 г.</span>
-            <Schedule />
+            <div ref={scheduleRef}>
+              <Schedule />
+            </div>
           </div>
         </section>
 
@@ -122,7 +187,9 @@ function App() {
           <div className={style.sectionContent}>
             <h3 className={style.sectionTitle}>Отвечаем на ваши вопросы</h3>
             <div className={style.sectionIcon}><FaPersonCircleQuestion /></div>
-            <Questions />
+            <div ref={questionsRef}>
+              <Questions />
+            </div>
           </div>
         </section>
 
