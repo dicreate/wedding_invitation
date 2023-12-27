@@ -26,7 +26,8 @@
 
    &Heart{
       font-size: calc(10vh + 6vw);
-      height: calc(8vh + 6vw);
+      height: calc(10vh + 6vw);
+      line-height: 1.1;
    }
 }  
 
@@ -156,8 +157,8 @@
       }
    
       &Heart{
-         line-height: 1;
-         font-size: calc(8vh + 8vw);
+         font-size: calc(7vh + 3vw);
+         height: calc(7vh + 3vw);
       }
    }  
  }
