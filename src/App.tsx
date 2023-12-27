@@ -19,6 +19,10 @@ function App() {
   const invitationRef = useRef(null);
   const scheduleRef = useRef(null);
   const questionsRef = useRef(null);
+  const galleryRef = useRef(null);
+  const heartRef = useRef(null);
+  const nuptialsRef = useRef(null);
+  const weddingRef = useRef(null);
 
   useLayoutEffect(() => {
     /*  const tl = gsap.timeline({
@@ -29,6 +33,13 @@ function App() {
          end: 'bottom 20%',
          toggleActions: 'play none none reverse',
        }
+
+          tl.from(questionsRef.current, {
+          opacity: 0,
+          x: -100,
+          duration: 2,
+        })
+        
      }) */
 
     gsap.from(invitationRef.current, {
@@ -67,12 +78,40 @@ function App() {
       }
     })
 
-    /*     tl.from(questionsRef.current, {
-          opacity: 0,
-          x: -100,
-          duration: 2,
-        }) */
+    gsap.from(galleryRef.current, {
+      opacity: 0,
+      x: -100,
+      duration: 2,
+      scrollTrigger: {
+        trigger: galleryRef.current,
+        start: 'top 100%',
+        end: 'bottom 20%',
+        toggleActions: 'play none none reverse',
+      }
+    })
 
+    const tl = gsap.timeline({ repeat: -1 });
+    tl.fromTo(heartRef.current, { duration: 0.3, scale: 1.1, y: -5 }, { duration: 0.3, scale: 1, y: 0 });
+
+    gsap.from(nuptialsRef.current, {
+      opacity: 0,
+      duration: 2,
+      scrollTrigger: {
+        trigger: nuptialsRef.current,
+        end: 'bottom 20%',
+        toggleActions: 'play none none reverse',
+      }
+    })
+
+    gsap.from(weddingRef.current, {
+      opacity: 0,
+      duration: 2,
+      scrollTrigger: {
+        trigger: weddingRef.current,
+        end: 'bottom 20%',
+        toggleActions: 'play none none reverse',
+      }
+    })
   });
 
   return (
@@ -113,7 +152,7 @@ function App() {
                 <div>
                   <img src="./me.webp" alt="me" />
                 </div>
-                <div>
+                <div ref={heartRef}>
                   <IoHeartSharp className={style.invitationPhotosIcon} />
                 </div>
                 <div>
@@ -132,16 +171,18 @@ function App() {
             <h3 className={style.sectionTitle}>Love Story</h3>
             <div className={style.sectionIcon}><GiGloves /></div>
           </div>
-          <Gallery
-            photos={[
-              { id: 1, src: "./photos/1.webp", preview: "./photos/preview/1.webp", description: "photo 1" },
-              { id: 2, src: "./photos/2.webp", preview: "./photos/preview/2.webp", description: "photo 2" },
-              { id: 3, src: "./photos/3.webp", preview: "./photos/preview/3.webp", description: "photo 3" },
-              { id: 4, src: "./photos/4.webp", preview: "./photos/preview/4.webp", description: "photo 4" },
-              { id: 5, src: "./photos/5.webp", preview: "./photos/preview/5.webp", description: "photo 5" },
-              { id: 6, src: "./photos/6.webp", preview: "./photos/preview/6.webp", description: "photo 6" },
-              { id: 7, src: "./photos/7.webp", preview: "./photos/preview/7.webp", description: "photo 7" },
-            ]} />
+          <div ref={galleryRef}>
+            <Gallery
+              photos={[
+                { id: 1, src: "./photos/1.webp", preview: "./photos/preview/1.webp", description: "photo 1" },
+                { id: 2, src: "./photos/2.webp", preview: "./photos/preview/2.webp", description: "photo 2" },
+                { id: 3, src: "./photos/3.webp", preview: "./photos/preview/3.webp", description: "photo 3" },
+                { id: 4, src: "./photos/4.webp", preview: "./photos/preview/4.webp", description: "photo 4" },
+                { id: 5, src: "./photos/5.webp", preview: "./photos/preview/5.webp", description: "photo 5" },
+                { id: 6, src: "./photos/6.webp", preview: "./photos/preview/6.webp", description: "photo 6" },
+                { id: 7, src: "./photos/7.webp", preview: "./photos/preview/7.webp", description: "photo 7" },
+              ]} />
+          </div>
         </section>
 
         <div id="schedule"></div>
@@ -150,8 +191,8 @@ function App() {
           <div className={style.sectionContent}>
             <h3 className={style.sectionTitle}>Программа свадебного дня</h3>
             <div className={style.sectionIcon}><GrSchedules /></div>
-            <span className={style.scheduleDate}>24 августа 2024 г.</span>
             <div ref={scheduleRef}>
+              <span className={style.scheduleDate}>24 августа 2024 г.</span>
               <Schedule />
             </div>
           </div>
@@ -166,7 +207,9 @@ function App() {
             <span>Костёл Воздвижения Креста Господня</span>
             <span className={style.address}>Лида, Советская ул.,2</span>
           </div>
-          <Map coordinates={[53.889263, 25.303251]} balloon={"Лида, Советская ул.,2"} />
+          <div ref={nuptialsRef}>
+            <Map coordinates={[53.889263, 25.303251]} balloon={"Лида, Советская ул.,2"} />
+          </div>
         </section>
 
         <div id="dinnerMap"></div>
@@ -178,7 +221,9 @@ function App() {
             <span>Усадьба "Барыш"</span>
             <span className={style.address}>Гродненская область, Вороновский район</span>
           </div>
-          <Map coordinates={[53.964824, 25.124172]} balloon="Гродненская область, Вороновский район" />
+          <div ref={weddingRef}>
+            <Map coordinates={[53.964824, 25.124172]} balloon="Гродненская область, Вороновский район" />
+          </div>
         </section>
 
         <div id="questions"></div>
