@@ -4,14 +4,14 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 import { Main, Map, Schedule, Gallery, Questions, Timer } from "./components"
 import style from "./app.module.scss"
 
-import { DiDigitalOcean } from "react-icons/di";
 import { YMaps } from "@pbe/react-yandex-maps";
 import { GiLovers, GiGloves } from "react-icons/gi";
-import { IoHeartSharp } from "react-icons/io5";
+import { IoHeartSharp, IoFlowerSharp } from "react-icons/io5";
 import { PiChurch } from "react-icons/pi";
 import { FaUtensils } from "react-icons/fa";
 import { GrSchedules } from "react-icons/gr";
 import { FaPersonCircleQuestion } from "react-icons/fa6";
+
 
 function App() {
   gsap.registerPlugin(ScrollTrigger);
@@ -23,6 +23,12 @@ function App() {
   const heartRef = useRef(null);
   const nuptialsRef = useRef(null);
   const weddingRef = useRef(null);
+  const invitationTitleRef = useRef(null);
+  const galleryTitleRef = useRef(null);
+  const scheduleTitleRef = useRef(null);
+  const nuptialsTitleRef = useRef(null);
+  const weddingTitleRef = useRef(null);
+  const questionsTitleRef = useRef(null);
 
   useLayoutEffect(() => {
     /*  const tl = gsap.timeline({
@@ -42,50 +48,84 @@ function App() {
         
      }) */
 
+    gsap.from(invitationTitleRef.current, {
+    opacity: 0,
+    y: -100,
+    duration: 2,
+    scrollTrigger: {
+      trigger: invitationTitleRef.current,
+      toggleActions: 'play none none reverse',
+    }
+  })
+
     gsap.from(invitationRef.current, {
       opacity: 0,
-      x: -100,
-      duration: 2,
+      y: 100,
+      duration: 1,
       scrollTrigger: {
         trigger: invitationRef.current,
-        start: 'top 80%',
-        end: 'bottom 20%',
+        toggleActions: 'play none none reverse',
+      }
+    })
+    
+    gsap.from(scheduleTitleRef.current, {
+      opacity: 0,
+      y: -100,
+      duration: 2,
+      scrollTrigger: {
+        trigger: scheduleTitleRef.current,
         toggleActions: 'play none none reverse',
       }
     })
 
     gsap.from(scheduleRef.current, {
       opacity: 0,
-      x: -100,
-      duration: 2,
+      y: 100,
+      duration: 1,
       scrollTrigger: {
         trigger: scheduleRef.current,
-        start: 'top 80%',
-        end: 'bottom 20%',
+        toggleActions: 'play none none reverse',
+      }
+    })
+    
+
+    gsap.from(questionsTitleRef.current, {
+      opacity: 0,
+      y: -100,
+      duration: 2,
+      scrollTrigger: {
+        trigger: questionsTitleRef.current,
         toggleActions: 'play none none reverse',
       }
     })
 
     gsap.from(questionsRef.current, {
       opacity: 0,
-      x: -100,
-      duration: 2,
+      y: 100,
+      duration: 1,
       scrollTrigger: {
         trigger: questionsRef.current,
-        start: 'top 80%',
-        end: 'bottom 20%',
+        toggleActions: 'play none none reverse',
+      }
+    })
+
+
+    gsap.from(galleryTitleRef.current, {
+      opacity: 0,
+      y: -100,
+      duration: 2,
+      scrollTrigger: {
+        trigger: galleryTitleRef.current,
         toggleActions: 'play none none reverse',
       }
     })
 
     gsap.from(galleryRef.current, {
       opacity: 0,
-      x: -100,
-      duration: 2,
+      y: 100,
+      duration: 1,
       scrollTrigger: {
         trigger: galleryRef.current,
-        start: 'top 100%',
-        end: 'bottom 20%',
         toggleActions: 'play none none reverse',
       }
     })
@@ -93,22 +133,42 @@ function App() {
     const tl = gsap.timeline({ repeat: -1 });
     tl.fromTo(heartRef.current, { duration: 0.3, scale: 1.1, y: -5 }, { duration: 0.3, scale: 1, y: 0 });
 
-    gsap.from(nuptialsRef.current, {
+    gsap.from(nuptialsTitleRef.current, {
       opacity: 0,
+      y: -100,
       duration: 2,
       scrollTrigger: {
+        trigger: nuptialsTitleRef.current,
+        toggleActions: 'play none none reverse',
+      }
+    })
+
+    gsap.from(nuptialsRef.current, {
+      opacity: 0,
+      y: 100,
+      duration: 1,
+      scrollTrigger: {
         trigger: nuptialsRef.current,
-        end: 'bottom 20%',
+        toggleActions: 'play none none reverse',
+      }
+    })
+
+    gsap.from(weddingTitleRef.current, {
+      opacity: 0,
+      y: -100,
+      duration: 2,
+      scrollTrigger: {
+        trigger: weddingTitleRef.current,
         toggleActions: 'play none none reverse',
       }
     })
 
     gsap.from(weddingRef.current, {
       opacity: 0,
-      duration: 2,
+      y: 100,
+      duration: 1,
       scrollTrigger: {
         trigger: weddingRef.current,
-        end: 'bottom 20%',
         toggleActions: 'play none none reverse',
       }
     })
@@ -141,8 +201,10 @@ function App() {
 
         <section className={style.section}>
           <div className={style.sectionContent}>
-            <h3 className={style.sectionTitle}>Дима 🕊 Карина</h3>
-            <div className={style.sectionIcon}><GiLovers /></div>
+            <div ref={invitationTitleRef}>
+              <h3 className={style.sectionTitle}>Дима 🕊 Карина</h3>
+              <div className={style.sectionIcon}><GiLovers /></div>
+            </div>
             <div className={style.invitation} ref={invitationRef}>
               <p>Дорогие друзья и близкие!</p>
               <p>Мы с невероятной радостью приглашаем вас разделить с нами наше счастье в этот замечательный день — день нашей свадьбы!</p>
@@ -168,8 +230,10 @@ function App() {
 
         <section className={style.section}>
           <div className={style.sectionContent}>
-            <h3 className={style.sectionTitle}>Love Story</h3>
-            <div className={style.sectionIcon}><GiGloves /></div>
+            <div ref={galleryTitleRef}>
+              <h3 className={style.sectionTitle}>Love Story</h3>
+              <div className={style.sectionIcon}><GiGloves /></div>
+            </div>
           </div>
           <div ref={galleryRef}>
             <Gallery
@@ -189,9 +253,11 @@ function App() {
 
         <section className={`${style.section} ${style.schedule}`}>
           <div className={style.sectionContent}>
-            <h3 className={style.sectionTitle}>Программа свадебного дня</h3>
-            <div className={style.sectionIcon}><GrSchedules /></div>
-            <div ref={scheduleRef}>
+            <div ref={scheduleTitleRef}>
+              <h3 className={style.sectionTitle}>Программа свадебного дня</h3>
+              <div className={style.sectionIcon}><GrSchedules /></div>
+            </div>       
+            <div ref={scheduleRef} style={{marginTop: '50px'}}>
               <span className={style.scheduleDate}>24 августа 2024 г.</span>
               <Schedule />
             </div>
@@ -201,7 +267,7 @@ function App() {
         <div id="ceremonyMap"></div>
 
         <section className={style.section} >
-          <div className={style.sectionContent}>
+          <div className={style.sectionContent} ref={nuptialsTitleRef}>
             <h3 className={style.sectionTitle}>Венчание</h3>
             <div className={style.sectionIcon}><PiChurch /></div>
             <span>Костёл Воздвижения Креста Господня</span>
@@ -215,7 +281,7 @@ function App() {
         <div id="dinnerMap"></div>
 
         <section className={style.section}>
-          <div className={style.sectionContent}>
+          <div className={style.sectionContent} ref={weddingTitleRef}>
             <h3 className={style.sectionTitle}>Выездная регистрация и банкет</h3>
             <div className={style.sectionIcon}><FaUtensils /></div>
             <span>Усадьба "Барыш"</span>
@@ -230,8 +296,10 @@ function App() {
 
         <section className={style.section}>
           <div className={style.sectionContent}>
-            <h3 className={style.sectionTitle}>Отвечаем на ваши вопросы</h3>
-            <div className={style.sectionIcon}><FaPersonCircleQuestion /></div>
+            <div ref={questionsTitleRef}>
+              <h3 className={style.sectionTitle}>Отвечаем на ваши вопросы</h3>
+              <div className={style.sectionIcon}><FaPersonCircleQuestion /></div>
+            </div>       
             <div ref={questionsRef}>
               <Questions />
             </div>
@@ -239,8 +307,10 @@ function App() {
         </section>
 
         <footer className={style.footer}>
-          <div className={style.footerText}>Спасибо, что вы с нами !</div>
-          <div className={style.footerIcon}><DiDigitalOcean /></div>
+          <div className={style.footerText}>Будем рады видеть вас на нашей свадьбе !</div>
+          <div className={style.footerIcon}><IoFlowerSharp /></div>
+          <div className={style.footerLink}>Здесь будет ссылка на свадебные фотографии после свадьбы</div>
+          <div></div>
         </footer>
       </div>
     </YMaps>

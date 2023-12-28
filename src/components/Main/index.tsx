@@ -1,6 +1,7 @@
 import style from './index.module.scss'
+import gsap from 'gsap';
 import Navigation from './Navigation';
-import { ReactNode, useEffect, useRef } from 'react';
+import { ReactNode, useEffect, useRef, useLayoutEffect } from 'react';
 interface MainProps {
   text: ReactNode;
 }
@@ -8,6 +9,47 @@ interface MainProps {
 const Main = ({
   text
 }: MainProps) => {
+
+  const mainRef = useRef(null);
+
+  useLayoutEffect(() => {
+    /*  const tl = gsap.timeline({
+       scrollTrigger: {
+         trigger: invitationRef.current,
+         markers: true,
+         start: 'top 80%',
+         end: 'bottom 20%',
+         toggleActions: 'play none none reverse',
+       }
+
+          tl.from(questionsRef.current, {
+          opacity: 0,
+          x: -100,
+          duration: 2,
+        })
+        
+     }) */
+
+    gsap.from(mainRef.current, {
+      opacity: 0,
+      x: 400,
+      duration: 1.5,
+      scrollTrigger: {
+        trigger: mainRef.current,
+        toggleActions: 'play none none reverse',
+      }
+    })
+
+    gsap.from(mainNavigationRef.current, {
+      opacity: 0,
+      y: -100,
+      duration: 1,
+      scrollTrigger: {
+        trigger: mainNavigationRef.current,
+        toggleActions: 'play none none reverse',
+      }
+    })
+  });
 
   const mainNavigationRef = useRef<HTMLDivElement | null>(null);
 
@@ -35,7 +77,7 @@ const Main = ({
       <div className={style.mainNavigation} ref={mainNavigationRef}>
         <Navigation />
       </div>
-      <div className={style.mainBlur}>
+      <div className={style.mainBlur} ref={mainRef}>
         <div
           className={style.mainTransparent}
         >
