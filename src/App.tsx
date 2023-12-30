@@ -16,47 +16,31 @@ import { FaPersonCircleQuestion } from "react-icons/fa6";
 function App() {
   gsap.registerPlugin(ScrollTrigger);
 
-  const invitationRef = useRef(null);
-  const scheduleRef = useRef(null);
-  const questionsRef = useRef(null);
-  const galleryRef = useRef(null);
-  const heartRef = useRef(null);
-  const nuptialsRef = useRef(null);
-  const weddingRef = useRef(null);
-  const invitationTitleRef = useRef(null);
-  const galleryTitleRef = useRef(null);
-  const scheduleTitleRef = useRef(null);
-  const nuptialsTitleRef = useRef(null);
-  const weddingTitleRef = useRef(null);
-  const questionsTitleRef = useRef(null);
+  const invitationRef = useRef<HTMLDivElement>(null);
+  const scheduleRef = useRef<HTMLDivElement>(null);
+  const questionsRef = useRef<HTMLDivElement>(null);
+  const galleryRef = useRef<HTMLDivElement>(null);
+  const heartRef = useRef<HTMLDivElement>(null);
+  const nuptialsRef = useRef<HTMLDivElement>(null);
+  const weddingRef = useRef<HTMLDivElement>(null);
+  const invitationTitleRef = useRef<HTMLDivElement>(null);
+  const galleryTitleRef = useRef<HTMLDivElement>(null);
+  const scheduleTitleRef = useRef<HTMLDivElement>(null);
+  const nuptialsTitleRef = useRef<HTMLDivElement>(null);
+  const weddingTitleRef = useRef<HTMLDivElement>(null);
+  const questionsTitleRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
-    /*  const tl = gsap.timeline({
-       scrollTrigger: {
-         trigger: invitationRef.current,
-         markers: true,
-         start: 'top 80%',
-         end: 'bottom 20%',
-         toggleActions: 'play none none reverse',
-       }
-
-          tl.from(questionsRef.current, {
-          opacity: 0,
-          x: -100,
-          duration: 2,
-        })
-        
-     }) */
 
     gsap.from(invitationTitleRef.current, {
-    opacity: 0,
-    y: -100,
-    duration: 2,
-    scrollTrigger: {
-      trigger: invitationTitleRef.current,
-      toggleActions: 'play none none reverse',
-    }
-  })
+      opacity: 0,
+      y: -100,
+      duration: 2,
+      scrollTrigger: {
+        trigger: invitationTitleRef.current,
+        toggleActions: 'play none none reverse',
+      }
+    })
 
     gsap.from(invitationRef.current, {
       opacity: 0,
@@ -67,7 +51,7 @@ function App() {
         toggleActions: 'play none none reverse',
       }
     })
-    
+
     gsap.from(scheduleTitleRef.current, {
       opacity: 0,
       y: -100,
@@ -87,7 +71,7 @@ function App() {
         toggleActions: 'play none none reverse',
       }
     })
-    
+
 
     gsap.from(questionsTitleRef.current, {
       opacity: 0,
@@ -256,8 +240,8 @@ function App() {
             <div ref={scheduleTitleRef}>
               <h3 className={style.sectionTitle}>Программа свадебного дня</h3>
               <div className={style.sectionIcon}><GrSchedules /></div>
-            </div>       
-            <div ref={scheduleRef} style={{marginTop: '50px'}}>
+            </div>
+            <div ref={scheduleRef} style={{ marginTop: '50px' }}>
               <span className={style.scheduleDate}>24 августа 2024 г.</span>
               <Schedule />
             </div>
@@ -299,7 +283,7 @@ function App() {
             <div ref={questionsTitleRef}>
               <h3 className={style.sectionTitle}>Отвечаем на ваши вопросы</h3>
               <div className={style.sectionIcon}><FaPersonCircleQuestion /></div>
-            </div>       
+            </div>
             <div ref={questionsRef}>
               <Questions />
             </div>

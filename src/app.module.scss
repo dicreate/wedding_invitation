@@ -127,6 +127,7 @@
    align-items:center;
    justify-content: center;
    flex-direction: column;
+   text-align: center;
 
    &Text {
       color: white;
@@ -139,9 +140,9 @@
    }
 
    &Icon {
-      margin-top: 20px;
       color: white;
-      font-size: 15rem;
+      margin-top: 1rem;
+      font-size: 10rem;
    }
 }
 
