@@ -1,7 +1,7 @@
-import { useLayoutEffect, useRef } from 'react'
+import { useLayoutEffect, useRef, useState } from 'react'
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { Main, Map, Schedule, Gallery, Questions, Timer } from "./components"
+import { Main, Map, Schedule, Gallery, Questions, Timer, Modal } from "./components"
 import style from "./app.module.scss"
 
 import { YMaps } from "@pbe/react-yandex-maps";
@@ -14,6 +14,19 @@ import { FaPersonCircleQuestion } from "react-icons/fa6";
 
 
 function App() {
+
+  const [modalActive, setModalActive] = useState<boolean>(false);
+  const [mapCoordinates, setMapCoordinates] = useState<[number, number]>([53.964824, 25.124172]);
+  const [mapBalloon, setMapBalloon] = useState<string>("Гродненская область, Вороновский район");
+  const [key, setKey] = useState<number>(0)
+
+  const handleSpanClick = (coordinates: [number, number], balloon: string) => {
+     setMapCoordinates(coordinates);
+     setMapBalloon(balloon);
+     setModalActive(true);
+     setKey(prevKey => prevKey + 1); // Увеличиваем ключ, чтобы вызвать повторную отрисовку Map
+  }
+
   gsap.registerPlugin(ScrollTrigger);
 
   const invitationRef = useRef<HTMLDivElement>(null);
@@ -243,8 +256,11 @@ function App() {
             </div>
             <div ref={scheduleRef} style={{ marginTop: '50px' }}>
               <span className={style.scheduleDate}>24 августа 2024 г.</span>
-              <Schedule />
+              <Schedule handleSpanClick={handleSpanClick} />
             </div>
+              <Modal active={modalActive} setActive={setModalActive}>
+                <Map coordinates={mapCoordinates} balloon={mapBalloon} key={key} />
+            </Modal>
           </div>
         </section>
 

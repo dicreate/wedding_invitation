@@ -1,7 +1,4 @@
-import { useState } from "react"
 import style from "./index.module.scss"
-import Modal from "../Modal";
-import Map from "../Map";
 
 interface ScheduleItem {
    title: string;
@@ -11,25 +8,15 @@ interface ScheduleItem {
    coordinates: [number, number];
 }
 
-const Schedule = () => {
+const Schedule = ({ handleSpanClick }: { handleSpanClick: (coordinates: [number, number], balloon: string) => void}) => {
+
+   console.log(handleSpanClick)
 
    const items: ScheduleItem[] = [
       { title: "Венчание", place: "Костёл Воздвижения Креста Господня", address: 'Лида, Советская ул.,2', time: "11:00", coordinates: [53.889263, 25.303251] },
       { title: "Выездная роспись", place: 'Усадьба "Барыш"', address: 'Гродненская область, Вороновский район', time: "15:00", coordinates: [53.964824, 25.124172] },
       { title: "Праздничный ужин", place: 'Усадьба "Барыш"', address: 'Гродненская область, Вороновский район', time: "17:00", coordinates: [53.964824, 25.124172] }
    ];
-
-   const [modalActive, setModalActive] = useState<boolean>(false);
-   const [mapCoordinates, setMapCoordinates] = useState<[number, number]>([53.964824, 25.124172]);
-   const [mapBalloon, setMapBalloon] = useState<string>("Гродненская область, Вороновский район");
-   const [key, setKey] = useState<number>(0)
-
-   const handleSpanClick = (coordinates: [number, number], balloon: string) => {
-      setMapCoordinates(coordinates);
-      setMapBalloon(balloon);
-      setModalActive(true);
-      setKey(prevKey => prevKey + 1); // Увеличиваем ключ, чтобы вызвать повторную отрисовку Map
-   }
 
    return (
       <>
@@ -50,9 +37,6 @@ const Schedule = () => {
                </li>
             ))}
          </ul>
-         <Modal active={modalActive} setActive={setModalActive}>
-            <Map coordinates={mapCoordinates} balloon={mapBalloon} key={key} />
-         </Modal>
       </>
 
    )
