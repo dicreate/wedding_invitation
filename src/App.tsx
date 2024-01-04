@@ -313,10 +313,12 @@ function App() {
 
           <section className={style.section}>
             <div className={style.sectionContent}>
-              <h3 className={style.sectionTitle}>Подтвердите своё участие</h3>
+              <h3 className={style.sectionTitle}>Подтвердите своё присутствие</h3>
             </div>
             <Form />
-            <Notifications />
+            <div className={style.notification} >
+              <Notifications />
+            </div>
           </section>
 
           <footer className={style.footer}>

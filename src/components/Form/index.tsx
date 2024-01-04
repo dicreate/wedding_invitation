@@ -28,12 +28,11 @@ const Form = () => {
 
          await sendMessage(message);
 
-         form.values.fullname = ''
-         form.values.phone = ''
+         form.reset()
 
          notifications.show({
-            title: 'Форма отправлена',
-            message: 'Мы рады видеть вас на нашей свадьбе !',
+            title: <div className={style.notificationTitle}>Форма отправлена</div>,
+            message: <div className={style.notificationMessage}>Мы рады видеть вас на нашей свадьбе !</div>,
          })
 
       } catch (e) {
