@@ -1,4 +1,4 @@
-import { TextInput, Checkbox, Button, Group, Box } from '@mantine/core';
+import { TextInput, Button, Group, Box } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { useState } from 'react';
 import { sendMessage } from '../../api/telegram';
@@ -11,21 +11,25 @@ const Form = () => {
 
    const form = useForm({
       initialValues: {
-         email: '',
-         termsOfService: false,
+         fullname: '',
+         phone: ''
       },
 
       validate: {
-         email: (value) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email'),
+         fullname: (value) => (/^[A-Za-zА-Яа-яЁё\s]+$/.test(value) ? null : 'Имя должно содержать только буквы'),
+         phone: (value) => (/^[-+()\d\s]+$/.test(value) ? null : 'Неверный формат номера телефона'),
       },
    });
 
-   const handleSubmit = async ({ email, termsOfService }: typeof form.values): Promise<void> => {
+   const handleSubmit = async ({ fullname, phone }: typeof form.values): Promise<void> => {
       try {
          setIsLoading(true)
-         const message = `Почта: ${email}, согласие: ${termsOfService}`
+         const message = `Полное имя: ${fullname} %0AНомер телефона: ${phone}`
 
          await sendMessage(message);
+
+         form.values.fullname = ''
+         form.values.phone = ''
 
          notifications.show({
             title: 'Форма отправлена',
@@ -40,41 +44,36 @@ const Form = () => {
    }
 
    return (
-      <Box maw={550} mx="auto" className={style.box}>
+      <Box mx="auto" className={style.box}>
          <form onSubmit={form.onSubmit(handleSubmit)}>
             <TextInput
                classNames={{
                   input: style.input,
-                  label: style.label
+                  label: style.label,
+                  error: style.error
                }}
                size="md"
                withAsterisk
-               label="Email"
-               placeholder="your@email.com"
-               {...form.getInputProps('email')}
+               label="Ваше имя и фамилия"
+               placeholder="Имя и фамилия"
+               {...form.getInputProps('fullname')}
             />
 
             <TextInput
                classNames={{
                   input: style.input,
-                  label: style.label
+                  label: style.label,
+                  error: style.error
                }}
                size="md"
                withAsterisk
-               label="Email"
-               placeholder="your@email.com"
-               {...form.getInputProps('email')}
-            />
-
-
-            <Checkbox
-               mt="md"
-               label="I agree to sell my privacy"
-               {...form.getInputProps('termsOfService', { type: 'checkbox' })}
+               label="Номер телефона"
+               placeholder="Введите свой номер телефона"
+               {...form.getInputProps('phone')}
             />
 
             <Group justify="flex-end" mt="md">
-               <Button size='md' loading={isLoading} type="submit">Отправить</Button>
+               <Button radius={10} className={style.button} size='xl' loading={isLoading} type="submit">Отправить</Button>
             </Group>
          </form>
       </Box>

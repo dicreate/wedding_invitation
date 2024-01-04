@@ -312,6 +312,9 @@ function App() {
           </section>
 
           <section className={style.section}>
+            <div className={style.sectionContent}>
+              <h3 className={style.sectionTitle}>Подтвердите своё участие</h3>
+            </div>
             <Form />
             <Notifications />
           </section>
