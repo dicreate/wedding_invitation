@@ -15,6 +15,7 @@ import { PiChurch } from "react-icons/pi";
 import { FaUtensils } from "react-icons/fa";
 import { GrSchedules } from "react-icons/gr";
 import { FaPersonCircleQuestion } from "react-icons/fa6";
+import { GrDocumentVerified } from "react-icons/gr";
 
 
 function App() {
@@ -46,6 +47,8 @@ function App() {
   const nuptialsTitleRef = useRef<HTMLDivElement>(null);
   const weddingTitleRef = useRef<HTMLDivElement>(null);
   const questionsTitleRef = useRef<HTMLDivElement>(null);
+  const presenceTitleRef = useRef<HTMLDivElement>(null);
+  const presenceRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
 
@@ -170,6 +173,26 @@ function App() {
       duration: 1,
       scrollTrigger: {
         trigger: weddingRef.current,
+        toggleActions: 'play none none reverse',
+      }
+    })
+
+    gsap.from(presenceTitleRef.current, {
+      opacity: 0,
+      y: -100,
+      duration: 2,
+      scrollTrigger: {
+        trigger: presenceTitleRef.current,
+        toggleActions: 'play none none reverse',
+      }
+    })
+
+    gsap.from(presenceRef.current, {
+      opacity: 0,
+      y: 100,
+      duration: 1,
+      scrollTrigger: {
+        trigger: presenceRef.current,
         toggleActions: 'play none none reverse',
       }
     })
@@ -312,10 +335,13 @@ function App() {
           </section>
 
           <section className={style.section}>
-            <div className={style.sectionContent}>
+            <div className={style.sectionContent} ref={presenceTitleRef}>
               <h3 className={style.sectionTitle}>Подтвердите своё присутствие</h3>
+              <div className={style.sectionIcon}><GrDocumentVerified /></div>
             </div>
-            <Form />
+            <div ref={presenceRef}>
+              <Form />
+            </div>
             <div className={style.notification} >
               <Notifications />
             </div>

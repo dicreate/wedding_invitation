@@ -5,7 +5,7 @@
 
 .label {
    margin-top: 20px;
-   font-size: 1.6rem !important;
+   font-size: 1.8rem !important;
 }
 
 .button {
@@ -27,4 +27,39 @@
 
 .notificationMessage {
    font-size: 1.4rem;
+}
+
+.radio {
+   &Label{
+      font-size: 1.4rem !important;
+
+      &:hover {
+         cursor: pointer;
+      }
+   }
+
+   &FirstLabel {
+      font-size: 1.8rem !important;
+   }
+
+   &Root {
+      margin-top: 20px;
+   }
+
+   &Radio {
+   
+      &:hover {
+         cursor: pointer;
+      }
+   }
+}
+
+.checkbox {
+   &Label {
+      font-size: 1.4rem !important;
+   }
+
+   &Root {
+      margin-top: 20px;
+   }
 }
