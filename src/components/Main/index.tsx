@@ -13,22 +13,6 @@ const Main = ({
   const mainRef = useRef(null);
 
   useLayoutEffect(() => {
-    /*  const tl = gsap.timeline({
-       scrollTrigger: {
-         trigger: invitationRef.current,
-         markers: true,
-         start: 'top 80%',
-         end: 'bottom 20%',
-         toggleActions: 'play none none reverse',
-       }
-
-          tl.from(questionsRef.current, {
-          opacity: 0,
-          x: -100,
-          duration: 2,
-        })
-        
-     }) */
 
     gsap.from(mainRef.current, {
       opacity: 0,
@@ -36,16 +20,6 @@ const Main = ({
       duration: 1.5,
       scrollTrigger: {
         trigger: mainRef.current,
-        toggleActions: 'play none none reverse',
-      }
-    })
-
-    gsap.from(mainNavigationRef.current, {
-      opacity: 0,
-      y: -100,
-      duration: 1,
-      scrollTrigger: {
-        trigger: mainNavigationRef.current,
         toggleActions: 'play none none reverse',
       }
     })
@@ -74,7 +48,7 @@ const Main = ({
 
   return (
     <div className={style.main}>
-      <div className={style.mainNavigation} ref={mainNavigationRef}>
+      <div className={style.mainNavigation}>
         <Navigation />
       </div>
       <div className={style.mainBlur} ref={mainRef}>

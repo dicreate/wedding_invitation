@@ -334,6 +334,8 @@ function App() {
             </div>
           </section>
 
+          <div id="presence"></div>
+
           <section className={style.section}>
             <div className={style.sectionContent} ref={presenceTitleRef}>
               <h3 className={style.sectionTitle}>Подтвердите своё присутствие</h3>
