@@ -38,6 +38,31 @@
    }
 }
 
+@media(hover: hover) {
+   .navigation {
+      &Btn {
+         &:hover {
+            opacity: 0.7;
+         }
+      }
+   }
+}
+
+@media(hover: none) {
+   .navigation {
+      &Btn {
+         &:hover {
+            opacity: 1;
+         }
+
+         &:active {
+            opacity: 0.7;
+         }
+      }
+   }
+}
+
+
 @media (max-width: 640px) {
    .navigation {
       background: none;

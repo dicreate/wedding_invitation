@@ -23,7 +23,7 @@ export const Navigation: React.FC<NavigationProps> = ({ disabledPrev, disabledNe
          className={cl(style.navigationBtn, style.navigationBtnRight)}
          onClick={onNextClick}
       >
-         Previous
+         Next
       </button>
    </div>
 );
