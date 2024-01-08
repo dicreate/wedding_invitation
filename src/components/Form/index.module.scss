@@ -16,6 +16,9 @@
 .input {
    padding: 20px 10px !important;
    border-radius: 15px !important;
+   font-size: 1.4rem !important; // Изменение размера шрифта
+   font-family: 'Montserrat', sans-serif !important;
+
 }
 
 .error {
@@ -32,7 +35,7 @@
 
 .radio {
    &Label{
-      font-size: 1.4rem !important;
+      font-size: 1.6rem !important;
 
       &:hover {
          cursor: pointer;
@@ -40,11 +43,12 @@
    }
 
    &FirstLabel {
-      font-size: 1.8rem !important;
+      font-size: 1.6rem !important;
    }
 
    &Root {
       margin-top: 20px;
+      font-size: 1.4rem !important;
    }
 
    &Radio {
@@ -57,7 +61,11 @@
 
 .checkbox {
    &Label {
-      font-size: 1.4rem !important;
+      font-size: 1.6rem !important;
+
+      &:hover {
+         cursor: pointer;
+      }
    }
 
    &Root {
