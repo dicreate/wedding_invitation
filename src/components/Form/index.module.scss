@@ -62,13 +62,21 @@
 .checkbox {
    &Label {
       font-size: 1.6rem !important;
+      line-height: 1.3;
 
       &:hover {
          cursor: pointer;
       }
    }
 
+   &Input {
+      &:hover {
+         cursor: pointer;
+      }
+   }
+
    &Root {
+      gap: 100px !important;
       margin-top: 20px;
    }
 }

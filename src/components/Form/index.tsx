@@ -17,10 +17,12 @@ const Form = () => {
          fullname: '',
          withWhom: '',
          phone: '',
+         termsOfService: false,
       },
 
       validate: {
          fullname: (value) => (/^[A-Za-zА-Яа-яЁё\s]+$/.test(value) ? null : 'Имя должно содержать только буквы и не быть пустым'),
+         termsOfService: (value) => (value === true ? null : 'вы должны дать согласие на обработку персональных данных'),
          /*  phone: (value) => (/^[-+()\d\s]+$/.test(value) ? null : 'Неверный формат номера телефона'), */
       },
    });
@@ -76,6 +78,7 @@ const Form = () => {
                }}
             >
                <Radio
+                  size="xl"
                   classNames={{
                      root: style.radioRoot,
                      label: style.radioLabel,
@@ -84,6 +87,7 @@ const Form = () => {
                   value="Да"
                   label="Да" />
                <Radio
+                  size="xl"
                   classNames={{
                      root: style.radioRoot,
                      label: style.radioLabel,
@@ -115,23 +119,29 @@ const Form = () => {
                }}
             >
                <Checkbox
+                  size="xl"
                   classNames={{
                      label: style.checkboxLabel,
-                     root: style.checkboxRoot
+                     root: style.checkboxRoot,
+                     input: style.checkboxInput
                   }}
                   value="Венчание"
                   label="Венчание" />
                <Checkbox
+                  size="xl"
                   classNames={{
                      label: style.checkboxLabel,
-                     root: style.checkboxRoot
+                     root: style.checkboxRoot,
+                     input: style.checkboxInput
                   }}
                   value="Выездная роспись"
                   label="Выездная роспись" />
                <Checkbox
+                  size="xl"
                   classNames={{
                      label: style.checkboxLabel,
-                     root: style.checkboxRoot
+                     root: style.checkboxRoot,
+                     input: style.checkboxInput
                   }}
                   value="Праздничный ужин"
                   label="Праздничный ужин" />
@@ -146,37 +156,47 @@ const Form = () => {
                }}
             >
                <Checkbox
+                  size="xl"
                   classNames={{
                      label: style.checkboxLabel,
-                     root: style.checkboxRoot
+                     root: style.checkboxRoot,
+                     input: style.checkboxInput
                   }}
                   value="Водка"
                   label="Водка" />
                <Checkbox
+                  size="xl"
                   classNames={{
                      label: style.checkboxLabel,
-                     root: style.checkboxRoot
+                     root: style.checkboxRoot,
+                     input: style.checkboxInput
                   }}
                   value="Красное вино"
                   label="Красное вино" />
                <Checkbox
+                  size="xl"
                   classNames={{
                      label: style.checkboxLabel,
-                     root: style.checkboxRoot
+                     root: style.checkboxRoot,
+                     input: style.checkboxInput
                   }}
                   value="Белое вино"
                   label="Белое вино" />
                <Checkbox
+                  size="xl"
                   classNames={{
                      label: style.checkboxLabel,
-                     root: style.checkboxRoot
+                     root: style.checkboxRoot,
+                     input: style.checkboxInput
                   }}
                   value="Шампанское"
                   label="Шампанское" />
                <Checkbox
+                  size="xl"
                   classNames={{
                      label: style.checkboxLabel,
-                     root: style.checkboxRoot
+                     root: style.checkboxRoot,
+                     input: style.checkboxInput
                   }}
                   value="Безалкогольные напитки"
                   label="Безалкогольные напитки" />
@@ -194,7 +214,17 @@ const Form = () => {
                {...form.getInputProps('phone')}
             />
 
-            <Group justify="flex-end" mt="md">
+            <Group justify="space-between" mt="md" gap="30px">
+               <Checkbox
+                  size="xl"
+                  classNames={{
+                     label: style.checkboxLabel,
+                     root: style.checkboxRoot,
+                     input: style.checkboxInput
+                  }}
+                  label="Я даю согласие на обработку персональных данных"
+                  {...form.getInputProps('termsOfService', { type: 'checkbox' })}
+               />
                <Button radius={10} className={style.button} size='xl' loading={isLoading} type="submit">Отправить</Button>
             </Group>
          </form>

@@ -10,6 +10,4 @@ export const sendMessage = async (message: string): Promise<void> => {
 
       await Promise.reject(error.description || 'Что-то пошло не так...')
    }
-
-   console.log('response', response)
 };
