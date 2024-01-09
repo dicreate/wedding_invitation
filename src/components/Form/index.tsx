@@ -225,7 +225,7 @@ const Form = () => {
                   label="Я даю согласие на обработку персональных данных"
                   {...form.getInputProps('termsOfService', { type: 'checkbox' })}
                />
-               <Button radius={10} className={style.button} size='xl' loading={isLoading} type="submit">Отправить</Button>
+               <Button radius={20} className={style.button} size='xl' loading={isLoading} type="submit">Отправить</Button>
             </Group>
          </form>
       </Box>
