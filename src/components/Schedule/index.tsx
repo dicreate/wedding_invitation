@@ -8,13 +8,13 @@ interface ScheduleItem {
    coordinates: [number, number];
 }
 
-const Schedule = ({ handleSpanClick }: { handleSpanClick: (coordinates: [number, number], balloon: string) => void}) => {
+const Schedule = ({ handleSpanClick }: { handleSpanClick: (coordinates: [number, number], balloon: string) => void }) => {
 
    console.log(handleSpanClick)
 
    const items: ScheduleItem[] = [
-      { title: "Венчание", place: "Костёл Воздвижения Креста Господня", address: 'Лида, Советская ул.,2', time: "11:00", coordinates: [53.889263, 25.303251] },
-      { title: "Выездная роспись", place: 'Усадьба "Барыш"', address: 'Гродненская область, Вороновский район', time: "15:00", coordinates: [53.964824, 25.124172] },
+      { title: "Венчание", place: "Костёл Милосердия Божьего", address: 'ул. Строителей, 66, Лида', time: "14:00", coordinates: [53.92178, 25.24656] },
+      { title: "Выездная роспись", place: 'Усадьба "Барыш"', address: 'Гродненская область, Вороновский район', time: "16:00", coordinates: [53.964824, 25.124172] },
       { title: "Праздничный ужин", place: 'Усадьба "Барыш"', address: 'Гродненская область, Вороновский район', time: "17:00", coordinates: [53.964824, 25.124172] }
    ];
 

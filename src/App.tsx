@@ -298,11 +298,11 @@ function App() {
             <div className={style.sectionContent} ref={nuptialsTitleRef}>
               <h3 className={style.sectionTitle}>Венчание</h3>
               <div className={style.sectionIcon}><PiChurch /></div>
-              <span>Костёл Воздвижения Креста Господня</span>
-              <span className={style.address}>Лида, Советская ул.,2</span>
+              <span>Костёл Милосердия Божьего</span>
+              <span className={style.address}>ул. Строителей, 66, Лида</span>
             </div>
             <div ref={nuptialsRef}>
-              <Map coordinates={[53.889263, 25.303251]} balloon={"Лида, Советская ул.,2"} />
+              <Map coordinates={[53.92178, 25.24656]} balloon={"ул. Строителей, 66, Лида"} />
             </div>
           </section>
 
