@@ -10,9 +10,9 @@ import '@mantine/core/styles.css'
 import { MantineProvider } from '@mantine/core';
 import { YMaps } from "@pbe/react-yandex-maps";
 import { GiLovers, GiGloves } from "react-icons/gi";
-import { IoHeartSharp, IoFlowerSharp } from "react-icons/io5";
+import { IoHeartSharp } from "react-icons/io5";
 import { PiChurch } from "react-icons/pi";
-import { FaUtensils } from "react-icons/fa";
+import { FaUtensils, FaPhotoVideo } from "react-icons/fa";
 import { GrSchedules } from "react-icons/gr";
 import { FaPersonCircleQuestion } from "react-icons/fa6";
 import { GrDocumentVerified } from "react-icons/gr";
@@ -351,8 +351,8 @@ function App() {
 
           <footer className={style.footer}>
             <div className={style.footerText}>Будем рады видеть вас на нашей свадьбе !</div>
-            <div className={style.footerIcon}><IoFlowerSharp /></div>
-            <div className={style.footerLink}>Здесь будет ссылка на свадебные фотографии после свадьбы</div>
+            <div className={style.footerIcon}><FaPhotoVideo /></div>
+            <div className={style.footerLink}>Здесь будет ссылка на свадебные фотографии и видео после свадьбы</div>
             <div></div>
           </footer>
         </div>
