@@ -1,6 +1,6 @@
 import React from "react"
 import style from "./index.module.scss"
-
+import QuestionsForm from "./QuestionsForm";
 interface questionsItem {
    title: string;
    text: string;
@@ -49,6 +49,12 @@ const Questions: React.FC = () => {
                </div>
             ))
          }
+         <div className={style.content}>
+            <div className={style.contentTitle}>Остались вопросы ?</div>
+            <div className={style.contentText}>Задайте свой вопрос прямо здесь или лично нам</div>
+            <QuestionsForm />
+         </div>
+
       </div >
    )
 }

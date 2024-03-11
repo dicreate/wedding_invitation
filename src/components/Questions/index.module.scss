@@ -4,14 +4,16 @@
    display: flex;
    flex-direction: column;
    gap: 50px;
+   width: 100%;
 }
 
 .content {
    display: flex;
    flex-direction: column;
    gap: 30px;
-   max-width: 600px;
+   max-width: 630px;
    text-align: left;
+   width: 100%;
 
    &Title {
       font-weight: 500;

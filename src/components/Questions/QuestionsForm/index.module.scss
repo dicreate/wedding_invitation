@@ -1,0 +1,81 @@
+.box {
+   max-width: 80vw;
+}
+
+.label {
+   margin-top: 20px;
+   font-size: 1.8rem !important;
+}
+
+.button {
+   font-size: 1.6rem !important;
+   margin-top: 20px;
+}
+
+.input {
+   padding: 20px 10px !important;
+   border-radius: 15px !important;
+   font-size: 1.4rem !important; // Изменение размера шрифта
+   font-family: 'Montserrat', sans-serif !important;
+
+}
+
+.error {
+   font-size: 1.3rem !important;
+}
+
+.notificationTitle {
+   font-size: 1.8rem;
+}
+
+.notificationMessage {
+   font-size: 1.4rem;
+}
+
+.radio {
+   &Label{
+      font-size: 1.6rem !important;
+
+      &:hover {
+         cursor: pointer;
+      }
+   }
+
+   &FirstLabel {
+      font-size: 1.6rem !important;
+   }
+
+   &Root {
+      margin-top: 20px;
+      font-size: 1.4rem !important;
+   }
+
+   &Radio {
+   
+      &:hover {
+         cursor: pointer;
+      }
+   }
+}
+
+.checkbox {
+   &Label {
+      font-size: 1.6rem !important;
+      line-height: 1.3;
+
+      &:hover {
+         cursor: pointer;
+      }
+   }
+
+   &Input {
+      &:hover {
+         cursor: pointer;
+      }
+   }
+
+   &Root {
+      gap: 100px !important;
+      margin-top: 20px;
+   }
+}

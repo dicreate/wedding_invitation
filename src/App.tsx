@@ -323,15 +323,14 @@ function App() {
           <div id="questions"></div>
 
           <section className={style.section}>
-            <div className={style.sectionContent}>
-              <div ref={questionsTitleRef}>
-                <h3 className={style.sectionTitle}>Отвечаем на ваши вопросы</h3>
-                <div className={style.sectionIcon}><FaPersonCircleQuestion /></div>
-              </div>
-              <div ref={questionsRef}>
-                <Questions />
-              </div>
+            <div className={style.sectionContent} ref={questionsTitleRef}>
+              <h3 className={style.sectionTitle}>Отвечаем на ваши вопросы</h3>
+              <div className={style.sectionIcon}><FaPersonCircleQuestion /></div>
             </div>
+            <div ref={questionsRef}>
+              <Questions />
+            </div>
+
           </section>
 
           <div id="presence"></div>

@@ -10,8 +10,6 @@ interface ScheduleItem {
 
 const Schedule = ({ handleSpanClick }: { handleSpanClick: (coordinates: [number, number], balloon: string) => void }) => {
 
-   console.log(handleSpanClick)
-
    const items: ScheduleItem[] = [
       { title: "Венчание", place: "Костёл Милосердия Божьего", address: 'ул. Строителей, 66, Лида', time: "14:00", coordinates: [53.92178, 25.24656] },
       { title: "Выездная роспись", place: 'Усадьба "Барыш"', address: 'Гродненская область, Вороновский район', time: "16:00", coordinates: [53.964824, 25.124172] },
