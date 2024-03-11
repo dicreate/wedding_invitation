@@ -15,6 +15,7 @@ const Navigation = () => {
       { title: "Банкет", link: '#dinnerMap' },
       { title: "F.A.Q", link: '#questions' },
       { title: "Подтверждение", link: '#presence' },
+      { title: "Контакты", link: '#contacts' },
    ];
 
    return (

@@ -40,7 +40,7 @@ const Form = () => {
 
          notifications.show({
             title: <div className={style.notificationTitle}>Форма отправлена</div>,
-            message: <div className={style.notificationMessage}>Мы рады видеть вас на нашей свадьбе !</div>,
+            message: <div className={style.notificationMessage}> {isPresence === 'да' ? 'Мы будем рады видеть вас на нашей свадьбе !' : 'Очень жаль, что вы не будете с нами на нашей свадьбе :('}</div>,
          })
 
       } catch (e) {

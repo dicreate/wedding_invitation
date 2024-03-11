@@ -16,7 +16,8 @@ import { FaUtensils, FaPhotoVideo } from "react-icons/fa";
 import { GrSchedules } from "react-icons/gr";
 import { FaPersonCircleQuestion } from "react-icons/fa6";
 import { GrDocumentVerified } from "react-icons/gr";
-
+import { IoIosContacts } from "react-icons/io";
+import Contacts from './components/Contacts';
 
 function App() {
 
@@ -49,6 +50,8 @@ function App() {
   const questionsTitleRef = useRef<HTMLDivElement>(null);
   const presenceTitleRef = useRef<HTMLDivElement>(null);
   const presenceRef = useRef<HTMLDivElement>(null);
+  const contactsTitleRef = useRef<HTMLDivElement>(null);
+  const contactsRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
 
@@ -196,6 +199,26 @@ function App() {
         toggleActions: 'play none none reverse',
       }
     })
+
+    gsap.from(contactsTitleRef.current, {
+      opacity: 0,
+      y: -100,
+      duration: 2,
+      scrollTrigger: {
+        trigger: contactsTitleRef.current,
+        toggleActions: 'play none none reverse',
+      }
+    })
+
+    gsap.from(contactsRef.current, {
+      opacity: 0,
+      y: 100,
+      duration: 1,
+      scrollTrigger: {
+        trigger: contactsRef.current,
+        toggleActions: 'play none none reverse',
+      }
+    })
   });
 
   return (
@@ -330,7 +353,6 @@ function App() {
             <div ref={questionsRef}>
               <Questions />
             </div>
-
           </section>
 
           <div id="presence"></div>
@@ -343,8 +365,17 @@ function App() {
             <div ref={presenceRef}>
               <Form />
             </div>
-            <div className={style.notification} >
-              <Notifications />
+          </section>
+
+          <div id="contacts"></div>
+
+          <section className={style.section}>
+            <div className={style.sectionContent} ref={contactsTitleRef}>
+              <h3 className={style.sectionTitle}>Контакты</h3>
+              <div className={style.sectionIcon}><IoIosContacts /></div>
+            </div>
+            <div ref={contactsRef}>
+              <Contacts />
             </div>
           </section>
 
@@ -354,6 +385,9 @@ function App() {
             <div className={style.footerLink}>Здесь будет ссылка на свадебные фотографии и видео после свадьбы</div>
             <div></div>
           </footer>
+          <div className={style.notification} >
+            <Notifications />
+          </div>
         </div>
       </MantineProvider>
     </YMaps>

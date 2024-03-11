@@ -35,7 +35,7 @@ const QuestionsForm = () => {
 
          notifications.show({
             title: <div className={style.notificationTitle}>Форма отправлена</div>,
-            message: <div className={style.notificationMessage}>Мы рады видеть вас на нашей свадьбе !</div>,
+            message: <div className={style.notificationMessage}>Скоро мы ответим на ваш вопрос !</div>
          })
 
       } catch (e) {
