@@ -1,9 +1,9 @@
-import React from "react"
+import React, { ReactNode } from "react"
 import style from "./index.module.scss"
 import QuestionsForm from "./QuestionsForm";
 interface questionsItem {
    title: string;
-   text: string;
+   text: string | ReactNode;
    colors?: string[]
 }
 
@@ -12,7 +12,12 @@ const Questions: React.FC = () => {
    const questions: questionsItem[] = [
       {
          title: 'Будет ли дресс-код ?',
-         text: "Мы будем рады, если девушки выберут наряды в постельных тонах (подружки невесты - небесно-голубого цвета), а мужчины — костюм или рубашка.",
+         text: <div className={style.textContainer}>
+            <p>Нам было бы чрезвычайно приятно, если бы наши гости внесли свою частичку в создание волшебной атмосферы нашего торжества, отдав предпочтение нарядам в деликатных пастельных оттенках.</p>
+            <p>Мы будем рады, если подружки невесты выберут наряды небесно-голубого цвета.</p>
+            <p>Что касается мужчин, то наш взгляд упал на безупречность костюма – будь то элегантное сочетание рубашки и пиджака или же костюм, дополненный лишь рубашкой.</p>
+            <p>Благодарим вас за желание принять участие в создании великолепного вида нашего торжества!</p>
+         </div>,
          colors: ['#e1bfcd', '#eedbdd', '#f4d2c8', '#fae2ca', '#f6d8b6', '#efdfc8', '#f4e1b6', '#efdca2', '#f7f2c8', '#f2f1c1', '#e0e7d7', '#ecf3d2', '#cbe9c3', '#dfe9e1', '#dceef0', '#dae6f4', '#d1d7ef', '#e4d1e7']
       },
       {
@@ -32,7 +37,7 @@ const Questions: React.FC = () => {
                      item.colors
                         ? (
                            <>
-                              <div className={style.contentText}>Мы стараемся сделать праздник красивым и будем рады, если вы поддержите цветовую гамму нашей свадьбы.</div>
+                              {/*                               <p className={style.contentText}>Мы стараемся сделать праздник красивым и будем рады, если вы поддержите цветовую гамму нашей свадьбы.</p> */}
                               <h3 className={style.contentText} style={{ fontStyle: "italic" }}>Примеры постельных тонов:</h3>
                               <div className={style.colorsContainer}>
                                  {item.colors.map((color, index) => (
