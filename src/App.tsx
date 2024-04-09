@@ -219,7 +219,7 @@ function App() {
         toggleActions: 'play none none reverse',
       }
     })
-  });
+  }, []);
 
   return (
     <YMaps
