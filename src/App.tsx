@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { Main, Map, Schedule, Gallery, Questions, Timer, Modal, Form } from "./components"
@@ -53,7 +53,7 @@ function App() {
   const contactsTitleRef = useRef<HTMLDivElement>(null);
   const contactsRef = useRef<HTMLDivElement>(null);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
 
     gsap.from(invitationTitleRef.current, {
       opacity: 0,

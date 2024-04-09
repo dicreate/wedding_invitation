@@ -38,7 +38,7 @@ const Questions: React.FC = () => {
                         ? (
                            <>
                               {/*                               <p className={style.contentText}>Мы стараемся сделать праздник красивым и будем рады, если вы поддержите цветовую гамму нашей свадьбы.</p> */}
-                              <h3 className={style.contentText} style={{ fontStyle: "italic" }}>Примеры постельных тонов:</h3>
+                              <h3 className={style.contentText} style={{ fontStyle: "italic" }}>Примеры пастельных тонов:</h3>
                               <div className={style.colorsContainer}>
                                  {item.colors.map((color, index) => (
                                     <div className={style.color} style={{ backgroundColor: color, width: 60, height: 60, borderRadius: 100 }} key={index}>
