@@ -1,11 +1,18 @@
+
 .box {
    max-width: 80vw;
 }
 
+form {
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+}
+
 .label {
-   margin-top: 20px;
    font-size: 1.8rem !important;
 }
+
 
 .button {
    font-size: 1.6rem !important;

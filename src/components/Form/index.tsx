@@ -10,7 +10,7 @@ const Form = () => {
    const [isLoading, setIsLoading] = useState(false);
    const [isPresence, setIsPresence] = useState('Да');
    const [events, setEvents] = useState<string[]>([]);
-   const [drinks, setDrinks] = useState<string[]>([]);
+   /*    const [drinks, setDrinks] = useState<string[]>([]); */
 
    const form = useForm({
       initialValues: {
@@ -30,13 +30,13 @@ const Form = () => {
    const handleSubmit = async ({ fullname, withWhom, phone }: typeof form.values): Promise<void> => {
       try {
          setIsLoading(true)
-         const message = `Полное имя:  ${fullname} %0A%0AПрисутствие:  ${isPresence} %0A%0AС кем:  ${withWhom}  %0A%0AМероприятия:  ${events} %0A%0AНомер телефона:  ${phone} %0A%0AНапитки:  ${drinks}`
+         const message = `Полное имя:  ${fullname} %0A%0AПрисутствие:  ${isPresence} %0A%0AС кем:  ${withWhom}  %0A%0AМероприятия:  ${events} %0A%0AНомер телефона:  ${phone}`
 
          await sendMessage(message);
 
          form.reset()
          setEvents([])
-         setDrinks([])
+         /*         setDrinks([]) */
 
          notifications.show({
             title: <div className={style.notificationTitle}>Форма отправлена</div>,
@@ -147,7 +147,7 @@ const Form = () => {
                   label="Праздничный ужин" />
             </Checkbox.Group>
 
-            <Checkbox.Group
+            {/*  <Checkbox.Group
                label="Что предпочитаете пить ?"
                value={drinks}
                onChange={setDrinks}
@@ -200,7 +200,7 @@ const Form = () => {
                   }}
                   value="Безалкогольные напитки"
                   label="Безалкогольные напитки" />
-            </Checkbox.Group>
+            </Checkbox.Group> */}
 
             <TextInput
                classNames={{
