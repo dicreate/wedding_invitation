@@ -13,7 +13,6 @@ const QuestionsForm = () => {
       initialValues: {
          fullname: '',
          questions: '',
-         phone: '',
          termsOfService: false,
       },
 
@@ -24,10 +23,10 @@ const QuestionsForm = () => {
       },
    });
 
-   const handleSubmit = async ({ fullname, questions, phone }: typeof form.values): Promise<void> => {
+   const handleSubmit = async ({ fullname, questions }: typeof form.values): Promise<void> => {
       try {
          setIsLoading(true)
-         const message = `Полное имя:  ${fullname}  %0A%0AВопросы:  ${questions}  %0A%0AНомер телефона:  ${phone}`
+         const message = `Полное имя:  ${fullname}  %0A%0AВопросы:  ${questions}`
 
          await sendMessage(message);
 
@@ -77,7 +76,7 @@ const QuestionsForm = () => {
                {...form.getInputProps('questions')}
             />
 
-            <TextInput
+            {/*      <TextInput
                classNames={{
                   input: style.input,
                   label: style.label,
@@ -88,7 +87,7 @@ const QuestionsForm = () => {
                placeholder="Введите свой номер телефона"
                {...form.getInputProps('phone')}
             />
-
+ */}
             <Group justify="space-between" mt="md" gap="30px">
                <Checkbox
                   size="xl"

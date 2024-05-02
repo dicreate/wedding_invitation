@@ -1,4 +1,4 @@
-import { TextInput, Button, Group, Box, Radio, Checkbox } from '@mantine/core';
+import { TextInput, Button, Group, Box, Radio, Checkbox, Textarea } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { useState } from 'react';
 import { sendMessage } from '../../api/telegram';
@@ -10,13 +10,14 @@ const Form = () => {
    const [isLoading, setIsLoading] = useState(false);
    const [isPresence, setIsPresence] = useState('Да');
    const [events, setEvents] = useState<string[]>([]);
-   /*    const [drinks, setDrinks] = useState<string[]>([]); */
+   const [drinks, setDrinks] = useState<string[]>([]);
 
    const form = useForm({
       initialValues: {
          fullname: '',
          withWhom: '',
          phone: '',
+         wishes: '',
          termsOfService: false,
       },
 
@@ -27,16 +28,16 @@ const Form = () => {
       },
    });
 
-   const handleSubmit = async ({ fullname, withWhom, phone }: typeof form.values): Promise<void> => {
+   const handleSubmit = async ({ fullname, withWhom, phone, wishes }: typeof form.values): Promise<void> => {
       try {
          setIsLoading(true)
-         const message = `Полное имя:  ${fullname} %0A%0AПрисутствие:  ${isPresence} %0A%0AС кем:  ${withWhom}  %0A%0AМероприятия:  ${events} %0A%0AНомер телефона:  ${phone}`
+         const message = `Полное имя:  ${fullname} %0A%0AПрисутствие:  ${isPresence} %0A%0AС кем:  ${withWhom}  %0A%0AМероприятия:  ${events} %0A%0AНомер телефона:  ${phone} %0A%0AАлкогольные напитки:  ${drinks} %0A%0AПожелания:  ${wishes}`
 
          await sendMessage(message);
 
          form.reset()
          setEvents([])
-         /*         setDrinks([]) */
+         setDrinks([])
 
          notifications.show({
             title: <div className={style.notificationTitle}>Форма отправлена</div>,
@@ -52,6 +53,7 @@ const Form = () => {
 
    return (
       <Box mx="auto" className={style.box}>
+         <div className={style.description}>Заполните форму ниже. Обратите внимание, обязательно нужно заполнить только два первых поля и дать согласие на обработку персональных данных.</div>
          <form onSubmit={form.onSubmit(handleSubmit)}>
             <TextInput
                classNames={{
@@ -62,7 +64,7 @@ const Form = () => {
                size="md"
                withAsterisk
                label="Ваше имя и фамилия"
-               placeholder="Имя и фамилия"
+               placeholder="Введите имя и фамилию"
                {...form.getInputProps('fullname')}
             />
 
@@ -147,8 +149,8 @@ const Form = () => {
                   label="Праздничный ужин" />
             </Checkbox.Group>
 
-            {/*  <Checkbox.Group
-               label="Что предпочитаете пить ?"
+            <Checkbox.Group
+               label="Какие предпочитаете алкогольные напитки ?"
                value={drinks}
                onChange={setDrinks}
                classNames={{
@@ -198,9 +200,9 @@ const Form = () => {
                      root: style.checkboxRoot,
                      input: style.checkboxInput
                   }}
-                  value="Безалкогольные напитки"
-                  label="Безалкогольные напитки" />
-            </Checkbox.Group> */}
+                  value="Не пью"
+                  label="Не пью" />
+            </Checkbox.Group>
 
             <TextInput
                classNames={{
@@ -212,6 +214,20 @@ const Form = () => {
                label="Номер телефона"
                placeholder="Введите свой номер телефона"
                {...form.getInputProps('phone')}
+            />
+            <Textarea
+               classNames={{
+                  input: style.input,
+                  label: style.label,
+                  error: style.error
+               }}
+               size="md"
+               label="Здесь вы можете поделиться своими идеями, мыслями, пожеланиями"
+               placeholder="Текст..."
+               autosize
+               minRows={2}
+               maxRows={4}
+               {...form.getInputProps('wishes')}
             />
 
             <Group justify="space-between" mt="md" gap="30px">
