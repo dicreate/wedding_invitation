@@ -53,7 +53,7 @@ const Form = () => {
 
    return (
       <Box mx="auto" className={style.box}>
-         <div className={style.description}>Заполните форму ниже. Обратите внимание, обязательно нужно заполнить только два первых поля и дать согласие на обработку персональных данных.</div>
+         <div className={style.description}>Пожалуйста, заполните приведенную ниже форму. Обратите внимание: заполнение первых двух полей, а также подтверждение согласия на обработку персональных данных – обязательные поля для отправки формы. Однако мы настоятельно рекомендуем вам заполнить все поля для более полной информации. Если вы не хотите заполнять форму, вы всегда можете подтвердить свое присутствие лично.</div>
          <form onSubmit={form.onSubmit(handleSubmit)}>
             <TextInput
                classNames={{
@@ -99,21 +99,8 @@ const Form = () => {
                   label="Нет" />
             </Radio.Group>
 
-            <TextInput
-               classNames={{
-                  input: style.input,
-                  label: style.label,
-                  error: style.error
-               }}
-               size="md"
-               label="С кем вы будете ?"
-               placeholder="С кем вы будете ?"
-               {...form.getInputProps('withWhom')}
-            />
-
-
             <Checkbox.Group
-               label="На каких мероприятиях будете с нами?"
+               label="На каких мероприятиях будете с нами ?"
                value={events}
                onChange={setEvents}
                classNames={{
@@ -148,6 +135,21 @@ const Form = () => {
                   value="Праздничный ужин"
                   label="Праздничный ужин" />
             </Checkbox.Group>
+
+            <TextInput
+               classNames={{
+                  input: style.input,
+                  label: style.label,
+                  error: style.error
+               }}
+               size="md"
+               label="С кем вы будете ?"
+               placeholder="С кем вы будете ?"
+               {...form.getInputProps('withWhom')}
+            />
+
+
+
 
             <Checkbox.Group
                label="Какие предпочитаете алкогольные напитки ?"
