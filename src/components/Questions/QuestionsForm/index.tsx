@@ -21,6 +21,7 @@ const QuestionsForm = () => {
          termsOfService: (value) => (value === true ? null : 'вы должны дать согласие на обработку персональных данных'),
          questions: (value) => (value.trim() ? null : 'Задайте свои вопросы'),
       },
+      clearInputErrorOnChange: true,
    });
 
    const handleSubmit = async ({ fullname, questions }: typeof form.values): Promise<void> => {

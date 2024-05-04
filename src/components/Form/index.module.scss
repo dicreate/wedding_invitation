@@ -1,3 +1,7 @@
+.container {
+   margin: 0 20px;
+}
+
 .box {
    margin-top: 50px;
    max-width: 700px;
@@ -23,7 +27,9 @@
 }
 
 .error {
-   font-size: 1.3rem !important;
+   font-size: 1.2rem !important;
+   margin-top: 5px;
+   font-style: italic;
 }
 
 .notificationTitle {
