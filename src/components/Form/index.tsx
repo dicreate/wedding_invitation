@@ -54,12 +54,12 @@ const Form = () => {
             setTransferError(null);
          }
 
-         if (!isValid) {
+         if (!isValid || form.validate().hasErrors) {
             setIsLoading(false)
             return;
          }
 
-         const message = `Полное имя:  ${fullname} %0A%0AПрисутствие:  ${isPresence} %0A%0AМероприятия:${events} %0A%0AТрансфер:  ${isTransfer}  %0A%0AС кем:  ${withWhom}  %0A%0AНомер телефона:  ${phone} %0A%0AАлкогольные напитки:  ${drinks} %0A%0AПожелания:  ${wishes}`
+         const message = `Полное имя:  ${fullname} %0A%0AПрисутствие:  ${isPresence} %0A%0AТрансфер:  ${isTransfer} %0A%0AМероприятия:  ${events} %0A%0AС кем:  ${withWhom}  %0A%0AНомер телефона:  ${phone} %0A%0AАлкогольные напитки:  ${drinks} %0A%0AПожелания:  ${wishes}`
 
          await sendMessage(message);
 
