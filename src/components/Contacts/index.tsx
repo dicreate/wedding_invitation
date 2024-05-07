@@ -17,7 +17,7 @@ const Contacts = () => {
                </a>
                <div className={style.contact_info__socials}>
                   <div style={{ color: '#0088cc' }}>
-                     <a href="https://t.me/dkovchugo" target="_blank"><FaTelegram /></a>
+                     <a href="https://t.me/createdi" target="_blank"><FaTelegram /></a>
                   </div>
                   <div style={{ color: '#7360F2' }}>
                      <a href="viber://chat?number=%2B375295143602" target="_blank"><FaViber /></a>
