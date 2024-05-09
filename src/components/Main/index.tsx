@@ -1,7 +1,7 @@
 import style from './index.module.scss'
 import gsap from 'gsap';
 import Navigation from './Navigation';
-import { ReactNode, useEffect, useRef, useLayoutEffect } from 'react';
+import { ReactNode, useRef, useLayoutEffect } from 'react';
 interface MainProps {
   text: ReactNode;
 }
@@ -25,32 +25,30 @@ const Main = ({
     })
   });
 
-  const mainNavigationRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    function handleScroll() {
-      const scrollY = window.scrollY;
-      if (mainNavigationRef.current) {
-        if (scrollY > window.innerHeight) {
-          mainNavigationRef.current.classList.add(style.scrolled);
-        } else {
-          mainNavigationRef.current.classList.remove(style.scrolled);
+  /*   const mainNavigationRef = useRef<HTMLDivElement | null>(null);
+  
+    useEffect(() => {
+      function handleScroll() {
+        const scrollY = window.scrollY;
+        if (mainNavigationRef.current) {
+          if (scrollY > window.innerHeight) {
+            mainNavigationRef.current.classList.add(style.scrolled);
+          } else {
+            mainNavigationRef.current.classList.remove(style.scrolled);
+          }
         }
       }
-    }
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  
+      window.addEventListener('scroll', handleScroll);
+  
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, []); */
 
   return (
     <div className={style.main}>
-      <div className={style.mainNavigation}>
-        <Navigation />
-      </div>
+      <Navigation />
       <div className={style.mainBlur} ref={mainRef}>
         <div
           className={style.mainTransparent}
