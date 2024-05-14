@@ -1,13 +1,22 @@
 import styles from "./index.module.scss"
 import { useDisclosure } from '@mantine/hooks';
 import { Burger } from '@mantine/core';
-const BurgerMenu = ({ header, items }) => {
+
+interface IBurger {
+   header: string;
+   items: Item[];
+}
+interface Item {
+   title: string;
+   link: string;
+}
+const BurgerMenu = ({ header, items }: IBurger) => {
    const [opened, { toggle }] = useDisclosure();
 
    return (
       <>
          <div className={`${styles.burgerContainer} ${opened ? styles.burgerOpen : ''}`}>
-            <Burger className={styles.burger} opened={opened} onClick={toggle} aria-label="Toggle navigation" />
+            <Burger className={styles.burger} opened={opened} onClick={toggle} aria-label="Toggle navigation" size="lg" />
          </div>
 
          <div className={`${styles.menu} ${opened ? styles.open : ''}`}>

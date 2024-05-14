@@ -28,41 +28,42 @@
       height: 100vh;
       backdrop-filter: blur(2px);
       position: absolute;
-      left: 30%;
+      right: 30%;
    }
 
    &Content {
-      width: 30%;
+      position: absolute;
+      width: 43%;
       height: 100%;
-      background-color: black;
+      background-color: rgba(255,255,255,1);
       display: flex;
       flex-direction: column;
       align-items: center;
       transition: all 0.4s;
+      right: 0;
    }
 
    &Link {
-      color: white;
       z-index: 103;
+      font-style: italic;
    }
 
    &Header {
-      padding: 10px;
+      padding: 16px 0;
       font-size: 2rem;
-      color: white;
-      border-bottom: 1px solid white;
+      border-bottom: 1px solid black;
       width: 100%;
       text-align: center;
    }
 
    &Navigation {
-      font-size: 1.6rem;
-      margin-top: 20px;
+      font-size: 1.8rem;
+      margin-top: 30px;
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 15px;
+      gap: 25px;
    }
 }
 
@@ -70,8 +71,25 @@
    transform: translateX(0);
 }
 
-@media (min-width: 581px) {
-   .burger {
+
+@media(hover: hover) {
+   .menuLink:hover {
+      color: rgb(15, 105, 190);
+   }
+}
+
+@media(hover: none) {
+   .menuLink:hover {
+      color: black;
+   }
+
+   .menuLink:active {
+      color: rgb(15, 105, 190);
+   }
+}
+
+@media (min-width: 1046px) {
+   .burgerContainer {
       display: none;
    }
 }

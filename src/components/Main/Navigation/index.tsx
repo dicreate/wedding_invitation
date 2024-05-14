@@ -30,16 +30,6 @@ const Navigation = () => {
                ))}
             </ul>
          </div>
-
-         {/*       <div className={`${styles.burgerMenu} ${opened ? styles.open : ''}`}>
-            <ul>
-               {links.map((item, index) => (
-                  <li key={index}>
-                     <a href={item.link}>{item.title}</a>
-                  </li>
-               ))}
-            </ul>
-         </div> */}
          <BurgerMenu header={"Навигация"} items={links} />
       </>
 

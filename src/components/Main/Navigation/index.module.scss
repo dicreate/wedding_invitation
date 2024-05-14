@@ -29,7 +29,7 @@
 
 .navigation li {
    margin-bottom: 0;
-   font-size: 1.4rem;
+   font-size: 1.3rem;
    display: flex;
    text-transform: uppercase;
    height: 100%;
@@ -67,17 +67,7 @@
    }
 }
 
-@media (max-width: 780px) {
-   .navigation {
-      gap: 0;
-   }
-
-   .navigation li a { 
-      padding: 0 10px;
-   }
-}
-
-@media (max-width: 580px) {
+@media (max-width: 1045px) {
    .navigationContainer {
       display: none;
    }
