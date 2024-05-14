@@ -47,7 +47,7 @@ const Form = () => {
             setPresenceError(null);
          }
 
-         if (!isTransfer) {
+         if (!isTransfer && isPresence === "Да") {
             setTransferError('Укажите, нужен ли вам трансфер');
             isValid = false;
          } else {
