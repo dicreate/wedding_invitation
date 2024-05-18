@@ -14,7 +14,7 @@ const Navigation = () => {
       { title: "Программа", link: '#schedule' },
       { title: "Венчание", link: '#ceremonyMap' },
       { title: "Банкет", link: '#dinnerMap' },
-      { title: "F.A.Q", link: '#questions' },
+      { title: "Вопросы", link: '#questions' },
       { title: "Подтверждение", link: '#presence' },
       { title: "Контакты", link: '#contacts' },
    ];

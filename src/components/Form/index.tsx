@@ -18,7 +18,7 @@ const Form = () => {
    const form = useForm({
       initialValues: {
          fullname: '',
-         withWhom: '',
+         /* withWhom: '', */
          phone: '',
          wishes: '',
          termsOfService: false,
@@ -32,7 +32,7 @@ const Form = () => {
       clearInputErrorOnChange: true,
    });
 
-   const handleSubmit = async ({ fullname, withWhom, phone, wishes }: typeof form.values): Promise<void> => {
+   const handleSubmit = async ({ fullname, phone, wishes }: typeof form.values): Promise<void> => {
       try {
          setIsLoading(true)
 
@@ -59,7 +59,7 @@ const Form = () => {
             return;
          }
 
-         const message = `Полное имя:  ${fullname} %0A%0AПрисутствие:  ${isPresence} %0A%0AТрансфер:  ${isTransfer} %0A%0AМероприятия:  ${events} %0A%0AС кем:  ${withWhom}  %0A%0AНомер телефона:  ${phone} %0A%0AАлкогольные напитки:  ${drinks} %0A%0AПожелания:  ${wishes}`
+         const message = `Полное имя:  ${fullname} %0A%0AПрисутствие:  ${isPresence} %0A%0AТрансфер:  ${isTransfer} %0A%0AМероприятия:  ${events} %0A%0AНомер телефона:  ${phone} %0A%0AАлкогольные напитки:  ${drinks} %0A%0AПожелания:  ${wishes}`
 
          await sendMessage(message);
 
@@ -83,6 +83,7 @@ const Form = () => {
       <div className={style.container}>
          <Box mx="auto" className={style.box}>
             <div className={style.description}>Пожалуйста, заполните приведенную ниже форму. Обратите внимание: заполнение первых трёх полей, а также подтверждение согласия на обработку персональных данных – обязательные поля для отправки формы. Однако мы настоятельно рекомендуем вам заполнить все поля для более полной информации. Если вы не хотите заполнять форму, вы всегда можете подтвердить свое присутствие лично.</div>
+            <div className={style.description} style={{ marginTop: 10 }}>Если хотите взять с собой детей, сообщите об этом нам лично.</div>
             <form onSubmit={(e) => {
                e.preventDefault();
                handleSubmit(form.values);
@@ -204,7 +205,7 @@ const Form = () => {
                      label="Праздничный ужин" />
                </Checkbox.Group>
 
-               <TextInput
+               {/*   <TextInput
                   classNames={{
                      input: style.input,
                      label: style.label,
@@ -214,7 +215,7 @@ const Form = () => {
                   label="С кем вы будете ?"
                   placeholder="С кем вы будете ?"
                   {...form.getInputProps('withWhom')}
-               />
+               /> */}
 
                <Checkbox.Group
                   label="Какие предпочитаете алкогольные напитки ?"
