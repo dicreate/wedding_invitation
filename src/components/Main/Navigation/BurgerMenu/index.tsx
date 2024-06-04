@@ -1,6 +1,7 @@
 import styles from "./index.module.scss"
 import { useDisclosure } from '@mantine/hooks';
 import { Burger } from '@mantine/core';
+import { useEffect } from "react";
 
 interface IBurger {
    header: string;
@@ -12,6 +13,15 @@ interface Item {
 }
 const BurgerMenu = ({ header, items }: IBurger) => {
    const [opened, { toggle }] = useDisclosure();
+
+
+   useEffect(() => {
+      if (opened && window.innerWidth < 768) {
+         document.body.style.overflow = 'hidden';
+      } else {
+         document.body.style.overflow = 'visible';
+      }
+   }, [opened])
 
    return (
       <>
