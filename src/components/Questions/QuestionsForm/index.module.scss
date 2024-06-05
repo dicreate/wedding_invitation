@@ -6,6 +6,7 @@ form {
 
 .label {
    font-size: 1.8rem !important;
+   font-weight: 400 !important;
 }
 
 
@@ -18,8 +19,7 @@ form {
    padding: 20px 10px !important;
    border-radius: 15px !important;
    font-size: 1.4rem !important; // Изменение размера шрифта
-   font-family: 'Montserrat', sans-serif !important;
-
+   font-family: 'Montserrat' !important;
 }
 
 .error {

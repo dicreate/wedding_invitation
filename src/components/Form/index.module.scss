@@ -11,6 +11,7 @@
 .label {
    margin-top: 20px;
    font-size: 1.8rem !important;
+   font-weight: 400 !important;
 }
 
 .button {
@@ -43,6 +44,7 @@
 .radio {
    &Label{
       font-size: 1.6rem !important;
+      font-weight: 400 !important;
 
       &:hover {
          cursor: pointer;
@@ -51,6 +53,7 @@
 
    &FirstLabel {
       font-size: 1.8rem !important;
+      font-weight: 400 !important;
    }
 
    &Root {

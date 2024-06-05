@@ -1,7 +1,17 @@
+@font-face {
+	font-family: 'Montserrat';
+	src: url(/fonts/montserrat/Montserrat-VariableFont_wght.ttf);
+}
+
+@font-face {
+	font-family: 'Pacifico';
+	src: url(/fonts/pacifico/Pacifico-Regular.ttf);
+}
+
 html {
 	scroll-behavior: smooth;
 	font-size: 10px;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Montserrat';
 	overflow-x: auto;
 }
 
