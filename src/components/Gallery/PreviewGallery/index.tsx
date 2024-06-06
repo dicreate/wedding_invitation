@@ -1,4 +1,4 @@
-import {useRef , useEffect, useMemo} from "react";
+import { useRef, useEffect, useMemo } from "react";
 import { Photo, CommonClassProps } from "../types";
 import cl from "classnames"
 import style from './index.module.scss'
@@ -12,41 +12,42 @@ export const PreviewGallery: React.FC<PreviewGalleryProps> = ({ activePhotoIndex
    const previewContainer = useRef<HTMLUListElement>(null);
 
    useEffect(() => {
-      if(!previewContainer.current) {
+      console.log(activePhotoIndex)
+      if (!previewContainer.current) {
          return;
       }
-      previewContainer.current.style.transform = `translate3d(-${activePhotoIndex*164}px, 0, 0)`
+      previewContainer.current.style.transform = `translate3d(-${activePhotoIndex * 164}px, 0, 0)`
    }, [activePhotoIndex])
 
    return (
       <div className={cl(style.previewGallery, className)}>
          {useMemo(() => (
-             <ul
-             className={style.previewGalleryTrack}
-             ref={previewContainer}
-          >
-             {
-                photos.map((photo, id) => (
-                   <li
-                      key={photo.id}
-                   >
-                     <button
-                         className={style.previewGalleryPreview}
-                         onClick={() => setNewPhoto(id)}
+            <ul
+               className={style.previewGalleryTrack}
+               ref={previewContainer}
+            >
+               {
+                  photos.map((photo, id) => (
+                     <li
+                        key={photo.id}
                      >
-                        <img
-                           src={photo.preview}
-                           alt={photo.description}
-                           className={style.previewGalleryImage} 
-                        />
-                     </button>
-                   </li>
-                ))
-             }
-          </ul>
-         ),[photos, setNewPhoto])
+                        <button
+                           className={style.previewGalleryPreview}
+                           onClick={() => setNewPhoto(id)}
+                        >
+                           <img
+                              src={photo.preview}
+                              alt={photo.description}
+                              className={style.previewGalleryImage}
+                           />
+                        </button>
+                     </li>
+                  ))
+               }
+            </ul>
+         ), [photos, setNewPhoto])
          }
-         <div className={style.previewGalleryCover}>
+         <div className={style.previewGalleryCover} translate="no">
             {activePhotoIndex + 1} / {photos.length}
          </div>
       </div>
