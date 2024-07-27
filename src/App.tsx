@@ -10,7 +10,6 @@ import '@mantine/core/styles.css'
 import { MantineProvider } from '@mantine/core';
 import { YMaps } from "@pbe/react-yandex-maps";
 import { GiLovers, GiGloves } from "react-icons/gi";
-import { IoHeartSharp } from "react-icons/io5";
 import { PiChurch } from "react-icons/pi";
 import { FaUtensils, FaPhotoVideo } from "react-icons/fa";
 import { GrSchedules } from "react-icons/gr";
@@ -18,6 +17,8 @@ import { FaPersonCircleQuestion } from "react-icons/fa6";
 import { GrDocumentVerified } from "react-icons/gr";
 import { IoIosContacts } from "react-icons/io";
 import Contacts from './components/Contacts';
+import Lottie from 'lottie-react';
+import heart from "../public/animations/heart.json";
 
 function App() {
 
@@ -262,8 +263,8 @@ function App() {
                   <div>
                     <img src="./me.webp" alt="me" />
                   </div>
-                  <div ref={heartRef}>
-                    <IoHeartSharp className={style.invitationPhotosIcon} />
+                  <div>
+                    <Lottie animationData={heart} />
                   </div>
                   <div>
                     <img src="./she.webp" alt="she" />
