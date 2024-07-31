@@ -9,16 +9,18 @@ import '@mantine/notifications/styles.css';
 import '@mantine/core/styles.css'
 import { MantineProvider } from '@mantine/core';
 import { YMaps } from "@pbe/react-yandex-maps";
-import { GiLovers, GiGloves } from "react-icons/gi";
-import { PiChurch } from "react-icons/pi";
-import { FaUtensils, FaPhotoVideo } from "react-icons/fa";
-import { GrSchedules } from "react-icons/gr";
-import { FaPersonCircleQuestion } from "react-icons/fa6";
-import { GrDocumentVerified } from "react-icons/gr";
-import { IoIosContacts } from "react-icons/io";
+import { FaPhotoVideo } from "react-icons/fa";
 import Contacts from './components/Contacts';
 import Lottie from 'lottie-react';
-import heart from "../public/animations/heart.json";
+import heart from "./animations/heart.json";
+import we from "./animations/we.json";
+import loveStory from "./animations/lovestory.json";
+import schedule from "./animations/schedule.json";
+import church from "./animations/church.json";
+import glass from "./animations/glass.json";
+import questions from "./animations/questions.json"
+import invitation from "./animations/invitation.json"
+import contacts from "./animations/contacts.json"
 
 function App() {
 
@@ -39,182 +41,55 @@ function App() {
   const invitationRef = useRef<HTMLDivElement>(null);
   const scheduleRef = useRef<HTMLDivElement>(null);
   const questionsRef = useRef<HTMLDivElement>(null);
-  const galleryRef = useRef<HTMLDivElement>(null);
-  const heartRef = useRef<HTMLDivElement>(null);
-  const nuptialsRef = useRef<HTMLDivElement>(null);
-  const weddingRef = useRef<HTMLDivElement>(null);
-  const invitationTitleRef = useRef<HTMLDivElement>(null);
-  const galleryTitleRef = useRef<HTMLDivElement>(null);
-  const scheduleTitleRef = useRef<HTMLDivElement>(null);
-  const nuptialsTitleRef = useRef<HTMLDivElement>(null);
-  const weddingTitleRef = useRef<HTMLDivElement>(null);
-  const questionsTitleRef = useRef<HTMLDivElement>(null);
-  const presenceTitleRef = useRef<HTMLDivElement>(null);
   const presenceRef = useRef<HTMLDivElement>(null);
-  const contactsTitleRef = useRef<HTMLDivElement>(null);
   const contactsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
 
-    gsap.from(invitationTitleRef.current, {
-      opacity: 0,
-      y: -100,
-      duration: 2,
-      scrollTrigger: {
-        trigger: invitationTitleRef.current,
-        toggleActions: 'play none none reverse',
-      }
-    })
-
     gsap.from(invitationRef.current, {
       opacity: 0,
-      y: 100,
-      duration: 1,
+      x: -500,
+      duration: 1.4,
       scrollTrigger: {
         trigger: invitationRef.current,
         toggleActions: 'play none none reverse',
       }
     })
 
-    gsap.from(scheduleTitleRef.current, {
-      opacity: 0,
-      y: -100,
-      duration: 2,
-      scrollTrigger: {
-        trigger: scheduleTitleRef.current,
-        toggleActions: 'play none none reverse',
-      }
-    })
-
     gsap.from(scheduleRef.current, {
       opacity: 0,
-      y: 100,
-      duration: 1,
+      x: -500,
+      duration: 1.4,
       scrollTrigger: {
         trigger: scheduleRef.current,
         toggleActions: 'play none none reverse',
       }
     })
 
-
-    gsap.from(questionsTitleRef.current, {
-      opacity: 0,
-      y: -100,
-      duration: 2,
-      scrollTrigger: {
-        trigger: questionsTitleRef.current,
-        toggleActions: 'play none none reverse',
-      }
-    })
-
     gsap.from(questionsRef.current, {
       opacity: 0,
-      y: 100,
-      duration: 1,
+      x: -500,
+      duration: 1.4,
       scrollTrigger: {
         trigger: questionsRef.current,
         toggleActions: 'play none none reverse',
       }
     })
 
-
-    gsap.from(galleryTitleRef.current, {
-      opacity: 0,
-      y: -100,
-      duration: 2,
-      scrollTrigger: {
-        trigger: galleryTitleRef.current,
-        toggleActions: 'play none none reverse',
-      }
-    })
-
-    gsap.from(galleryRef.current, {
-      opacity: 0,
-      y: 100,
-      duration: 1,
-      scrollTrigger: {
-        trigger: galleryRef.current,
-        toggleActions: 'play none none reverse',
-      }
-    })
-
-    const tl = gsap.timeline({ repeat: -1 });
-    tl.fromTo(heartRef.current, { duration: 0.3, scale: 1.1, y: -5 }, { duration: 0.3, scale: 1, y: 0 });
-
-    gsap.from(nuptialsTitleRef.current, {
-      opacity: 0,
-      y: -100,
-      duration: 2,
-      scrollTrigger: {
-        trigger: nuptialsTitleRef.current,
-        toggleActions: 'play none none reverse',
-      }
-    })
-
-    gsap.from(nuptialsRef.current, {
-      opacity: 0,
-      y: 100,
-      duration: 1,
-      scrollTrigger: {
-        trigger: nuptialsRef.current,
-        toggleActions: 'play none none reverse',
-      }
-    })
-
-    gsap.from(weddingTitleRef.current, {
-      opacity: 0,
-      y: -100,
-      duration: 2,
-      scrollTrigger: {
-        trigger: weddingTitleRef.current,
-        toggleActions: 'play none none reverse',
-      }
-    })
-
-    gsap.from(weddingRef.current, {
-      opacity: 0,
-      y: 100,
-      duration: 1,
-      scrollTrigger: {
-        trigger: weddingRef.current,
-        toggleActions: 'play none none reverse',
-      }
-    })
-
-    gsap.from(presenceTitleRef.current, {
-      opacity: 0,
-      y: -100,
-      duration: 2,
-      scrollTrigger: {
-        trigger: presenceTitleRef.current,
-        toggleActions: 'play none none reverse',
-      }
-    })
-
     gsap.from(presenceRef.current, {
       opacity: 0,
-      y: 100,
-      duration: 1,
+      x: -500,
+      duration: 1.4,
       scrollTrigger: {
         trigger: presenceRef.current,
         toggleActions: 'play none none reverse',
       }
     })
 
-    gsap.from(contactsTitleRef.current, {
-      opacity: 0,
-      y: -100,
-      duration: 2,
-      scrollTrigger: {
-        trigger: contactsTitleRef.current,
-        toggleActions: 'play none none reverse',
-      }
-    })
-
     gsap.from(contactsRef.current, {
       opacity: 0,
-      y: 100,
-      duration: 1,
+      x: -500,
+      duration: 1.4,
       scrollTrigger: {
         trigger: contactsRef.current,
         toggleActions: 'play none none reverse',
@@ -250,15 +125,17 @@ function App() {
 
           <section className={style.section}>
             <div className={style.sectionContent}>
-              <div ref={invitationTitleRef}>
+              <div className={style.sectionTitleContainer}>
                 <h3 className={style.sectionTitle}>Дима 🕊 Карина</h3>
-                <div className={style.sectionIcon}><GiLovers /></div>
+                <div className={style.sectionAnimation}><Lottie animationData={we} /></div>
               </div>
-              <div className={style.invitation} ref={invitationRef}>
-                <p>Дорогие родные, близкие и друзья!</p>
-                <p>24 августа 2024 года состоится неповторимый и незабываемый для нас праздник - день нашей свадьбы ✨.</p>
-                <p>Нам будет очень приятно, если вы придете и сможете разделить с нами радостные моменты в волнующей атмосфере любви и счастья!</p>
-                <p>Ниже предлагаем вам ознакомиться с таймингом дня и подтвердить свое присутствие заполнением маленькой анкеты ❤️.</p>
+              <div className={style.invitation} >
+                <div ref={invitationRef}>
+                  <p>Дорогие родные, близкие и друзья!</p>
+                  <p>24 августа 2024 года состоится неповторимый и незабываемый для нас праздник - день нашей свадьбы ✨.</p>
+                  <p>Нам будет очень приятно, если вы придете и сможете разделить с нами радостные моменты в волнующей атмосфере любви и счастья!</p>
+                  <p>Ниже предлагаем вам ознакомиться с таймингом дня и подтвердить свое присутствие заполнением маленькой анкеты ❤️.</p>
+                </div>
                 <div className={style.invitationPhotos}>
                   <div>
                     <img src="./me.webp" alt="me" />
@@ -279,21 +156,21 @@ function App() {
 
           <section className={style.section}>
             <div className={style.sectionContent}>
-              <div ref={galleryTitleRef}>
+              <div className={style.sectionTitleContainer}>
                 <h3 className={style.sectionTitle}>Love Story</h3>
-                <div className={style.sectionIcon}><GiGloves /></div>
+                <div className={style.sectionAnimation}><Lottie animationData={loveStory} /></div>
               </div>
             </div>
-            <div ref={galleryRef}>
+            <div>
               <Gallery
                 photos={[
-                  { id: 1, src: "./photos/1.webp", preview: "./photos/preview/1.webp", description: "photo 1" },
-                  { id: 2, src: "./photos/2.webp", preview: "./photos/preview/2.webp", description: "photo 2" },
-                  { id: 3, src: "./photos/3.webp", preview: "./photos/preview/3.webp", description: "photo 3" },
-                  { id: 4, src: "./photos/4.webp", preview: "./photos/preview/4.webp", description: "photo 4" },
-                  { id: 5, src: "./photos/5.webp", preview: "./photos/preview/5.webp", description: "photo 5" },
-                  { id: 6, src: "./photos/6.webp", preview: "./photos/preview/6.webp", description: "photo 6" },
-                  { id: 7, src: "./photos/7.webp", preview: "./photos/preview/7.webp", description: "photo 7" },
+                  { id: 1, src: "./photos/1.webp", preview: "./photos/1.webp", description: "photo 1" },
+                  { id: 2, src: "./photos/2.webp", preview: "./photos/2.webp", description: "photo 2" },
+                  { id: 3, src: "./photos/3.webp", preview: "./photos/3.webp", description: "photo 3" },
+                  { id: 4, src: "./photos/4.webp", preview: "./photos/4.webp", description: "photo 4" },
+                  { id: 5, src: "./photos/5.webp", preview: "./photos/5.webp", description: "photo 5" },
+                  { id: 6, src: "./photos/6.webp", preview: "./photos/6.webp", description: "photo 6" },
+                  { id: 7, src: "./photos/7.webp", preview: "./photos/7.webp", description: "photo 7" },
                 ]} />
             </div>
           </section>
@@ -302,9 +179,9 @@ function App() {
 
           <section className={`${style.section} ${style.schedule}`}>
             <div className={style.sectionContent}>
-              <div ref={scheduleTitleRef}>
+              <div className={style.sectionTitleContainer}>
                 <h3 className={style.sectionTitle}>Программа свадебного дня</h3>
-                <div className={style.sectionIcon}><GrSchedules /></div>
+                <div style={{ maxWidth: 180 }}><Lottie animationData={schedule} /></div>
               </div>
               <div ref={scheduleRef} style={{ marginTop: '50px' }}>
                 <span className={style.scheduleDate}>24 августа 2024 г.</span>
@@ -319,13 +196,13 @@ function App() {
           <div id="ceremonyMap"></div>
 
           <section className={style.section} >
-            <div className={style.sectionContent} ref={nuptialsTitleRef}>
+            <div className={style.sectionContent}>
               <h3 className={style.sectionTitle}>Венчание</h3>
-              <div className={style.sectionIcon}><PiChurch /></div>
+              <div className={style.sectionAnimation}><Lottie animationData={church} /></div>
               <span>Костёл Милосердия Божьего</span>
               <span className={style.address}>ул. Строителей, 66, Лида</span>
             </div>
-            <div ref={nuptialsRef}>
+            <div>
               <Map coordinates={[53.92178, 25.24656]} balloon={"ул. Строителей, 66, Лида"} />
             </div>
           </section>
@@ -333,13 +210,13 @@ function App() {
           <div id="dinnerMap"></div>
 
           <section className={style.section}>
-            <div className={style.sectionContent} ref={weddingTitleRef}>
+            <div className={style.sectionContent}>
               <h3 className={style.sectionTitle}>Выездная регистрация и банкет</h3>
-              <div className={style.sectionIcon}><FaUtensils /></div>
+              <div className={style.sectionAnimation}><Lottie animationData={glass} /></div>
               <span>Усадьба "Барыш"</span>
               <span className={style.address}>Гродненская область, Вороновский район</span>
             </div>
-            <div ref={weddingRef}>
+            <div>
               <Map coordinates={[53.964824, 25.124172]} balloon="Гродненская область, Вороновский район" />
             </div>
           </section>
@@ -347,9 +224,9 @@ function App() {
           <div id="questions"></div>
 
           <section className={style.section}>
-            <div className={style.sectionContent} ref={questionsTitleRef}>
+            <div className={style.sectionContent}>
               <h3 className={style.sectionTitle}>Отвечаем на ваши вопросы</h3>
-              <div className={style.sectionIcon}><FaPersonCircleQuestion /></div>
+              <div className={style.sectionAnimation}><Lottie animationData={questions} /></div>
             </div>
             <div ref={questionsRef}>
               <Questions />
@@ -359,9 +236,9 @@ function App() {
           <div id="presence"></div>
 
           <section className={style.section}>
-            <div className={style.sectionContent} ref={presenceTitleRef}>
+            <div className={style.sectionContent}>
               <h3 className={style.sectionTitle}>Подтвердите своё присутствие</h3>
-              <div className={style.sectionIcon}><GrDocumentVerified /></div>
+              <div className={style.sectionAnimation}><Lottie animationData={invitation} /></div>
             </div>
             <div ref={presenceRef}>
               <Form />
@@ -371,9 +248,9 @@ function App() {
           <div id="contacts"></div>
 
           <section className={style.section}>
-            <div className={style.sectionContent} ref={contactsTitleRef}>
+            <div className={style.sectionContent}>
               <h3 className={style.sectionTitle}>Контакты</h3>
-              <div className={style.sectionIcon}><IoIosContacts /></div>
+              <div className={style.sectionAnimation}><Lottie animationData={contacts} /></div>
             </div>
             <div ref={contactsRef}>
               <Contacts />

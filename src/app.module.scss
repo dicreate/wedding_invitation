@@ -76,6 +76,10 @@
 .section {
    margin-top: 100px;
 
+   &Animation {
+      max-width: 250px;
+   }
+
    &Content {
       text-align: center;
       font-size: 2rem;
@@ -83,9 +87,19 @@
       flex-direction: column;
       gap: 10px;
       margin: 0 10px;
+      align-items: center;
+      justify-content: center;
    }
 
    &Title {
+
+      &Container {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+      }
+
       font-size: 3rem;
       text-transform: uppercase;
       color: rgb(15, 105, 190);
