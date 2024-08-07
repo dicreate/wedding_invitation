@@ -164,13 +164,17 @@ function App() {
             <div>
               <Gallery
                 photos={[
-                  { id: 1, src: "./photos/1.webp", preview: "./photos/1.webp", description: "photo 1" },
-                  { id: 2, src: "./photos/2.webp", preview: "./photos/2.webp", description: "photo 2" },
-                  { id: 3, src: "./photos/3.webp", preview: "./photos/3.webp", description: "photo 3" },
-                  { id: 4, src: "./photos/4.webp", preview: "./photos/4.webp", description: "photo 4" },
-                  { id: 5, src: "./photos/5.webp", preview: "./photos/5.webp", description: "photo 5" },
-                  { id: 6, src: "./photos/6.webp", preview: "./photos/6.webp", description: "photo 6" },
-                  { id: 7, src: "./photos/7.webp", preview: "./photos/7.webp", description: "photo 7" },
+                  { id: 8, src: "./photos/8.webp", preview: "./photos/preview/8.webp", description: "photo 1" },
+                  { id: 9, src: "./photos/9.webp", preview: "./photos/preview/9.webp", description: "photo 1" },
+                  { id: 10, src: "./photos/10.webp", preview: "./photos/preview/10.webp", description: "photo 1" },
+                  { id: 11, src: "./photos/11.webp", preview: "./photos/preview/11.webp", description: "photo 1" },
+                  { id: 1, src: "./photos/1.webp", preview: "./photos/preview/1.webp", description: "photo 1" },
+                  { id: 2, src: "./photos/2.webp", preview: "./photos/preview/2.webp", description: "photo 2" },
+                  { id: 3, src: "./photos/3.webp", preview: "./photos/preview/3.webp", description: "photo 3" },
+                  { id: 4, src: "./photos/4.webp", preview: "./photos/preview/4.webp", description: "photo 4" },
+                  { id: 5, src: "./photos/5.webp", preview: "./photos/preview/5.webp", description: "photo 5" },
+                  { id: 6, src: "./photos/6.webp", preview: "./photos/preview/6.webp", description: "photo 6" },
+                  { id: 7, src: "./photos/7.webp", preview: "./photos/preview/7.webp", description: "photo 7" },
                 ]} />
             </div>
           </section>
