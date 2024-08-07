@@ -164,10 +164,10 @@ function App() {
             <div>
               <Gallery
                 photos={[
-                  { id: 8, src: "./photos/8.webp", preview: "./photos/preview/8.webp", description: "photo 1" },
-                  { id: 9, src: "./photos/9.webp", preview: "./photos/preview/9.webp", description: "photo 1" },
-                  { id: 10, src: "./photos/10.webp", preview: "./photos/preview/10.webp", description: "photo 1" },
-                  { id: 11, src: "./photos/11.webp", preview: "./photos/preview/11.webp", description: "photo 1" },
+                  { id: 8, src: "./photos/8.webp", preview: "./photos/preview/8.webp", description: "photo 8" },
+                  { id: 9, src: "./photos/9.webp", preview: "./photos/preview/9.webp", description: "photo 9" },
+                  { id: 10, src: "./photos/10.webp", preview: "./photos/preview/10.webp", description: "photo 10" },
+                  { id: 11, src: "./photos/11.webp", preview: "./photos/preview/11.webp", description: "photo 11" },
                   { id: 1, src: "./photos/1.webp", preview: "./photos/preview/1.webp", description: "photo 1" },
                   { id: 2, src: "./photos/2.webp", preview: "./photos/preview/2.webp", description: "photo 2" },
                   { id: 3, src: "./photos/3.webp", preview: "./photos/preview/3.webp", description: "photo 3" },
